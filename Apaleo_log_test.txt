@@ -1,0 +1,165 @@
+2024-08-01 10:20:00 - Folios - folios confirmed update started
+2024-08-01 10:20:00 - Folios - folios confirmed update finished
+2024-08-01 10:20:00 - Folios - folios inhouse update started
+2024-08-01 10:20:00 - Folios - folios inhouse update finished
+2024-08-01 10:20:00 - Folios - folios checkedout update started
+2024-08-01 10:20:06 - Folios - folios checkedout update finished
+2024-08-01 10:20:06 - Folios - folios canceled and noshow update started
+2024-08-01 10:20:06 - Folios - folios canceled and noshow update finished
+2024-08-01 10:21:51 - Folios - folios confirmed update started
+2024-08-01 10:21:51 - Folios - folios confirmed update finished
+2024-08-01 10:21:51 - Folios - folios inhouse update started
+2024-08-01 10:21:51 - Folios - folios inhouse update finished
+2024-08-01 10:21:51 - Folios - folios checkedout update started
+2024-08-01 10:24:17 - Folios - folios checkedout update finished
+2024-08-01 10:24:17 - Folios - folios canceled and noshow update started
+2024-08-01 10:24:17 - Folios - folios canceled and noshow update finished
+2024-08-01 10:29:09 - Folios - folios confirmed update started
+2024-08-01 10:36:28 - Folios - folios confirmed update started
+2024-08-01 10:37:54 - Folios - folios confirmed update started
+2024-08-01 10:38:13 - Folios - folios confirmed update started
+2024-08-01 10:51:18 - Folios - folios confirmed update started
+2024-08-01 10:55:44 - Folios - folios confirmed update started
+2024-08-01 10:57:15 - Folios - folios confirmed update started
+2024-08-01 10:59:07 - Folios - folios confirmed update started
+2024-08-01 11:00:00 - Folios - folios confirmed update started
+2024-08-01 11:00:49 - Folios - folios confirmed update started
+2024-08-01 11:01:06 - Folios - folios confirmed update started
+2024-08-01 11:04:25 - Folios - folios confirmed update started
+2024-08-01 11:07:11 - Folios - folios confirmed update started
+2024-08-01 11:10:40 - Folios - folios confirmed update started
+2024-08-01 11:19:13 - Folios - folios confirmed update started
+2024-08-01 11:29:17 - Folios - folios confirmed update started
+2024-08-01 11:29:24 - Folios - servicename cleaning done
+2024-08-01 11:29:59 - Folios - taas mapped
+2024-08-01 11:35:34 - Folios - folios confirmed update started
+2024-08-01 11:38:53 - Folios - folios confirmed update started
+2024-08-01 11:38:59 - Folios - servicename cleaning done
+2024-08-01 11:39:25 - Folios - taas mapped
+2024-08-01 11:56:17 - Folios - folios confirmed update started
+2024-08-01 11:58:15 - Folios - folios confirmed update started
+2024-08-01 11:58:16 - Error: 'NoneType' object is not subscriptable
+2024-08-01 11:58:16 - Error: 'NoneType' object is not subscriptable
+2024-08-01 11:59:46 - Folios - folios confirmed update started
+2024-08-01 11:59:46 - Error: 'NoneType' object is not subscriptable
+2024-08-01 11:59:46 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:01:40 - Folios - folios confirmed update started
+2024-08-01 12:01:41 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:01:41 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:01:43 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:01:44 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:02:47 - Folios - servicename cleaning done
+2024-08-01 12:03:26 - Folios - taas mapped
+2024-08-01 12:15:20 - Folios - folios confirmed update started
+2024-08-01 12:16:17 - Folios - servicename cleaning done
+2024-08-01 12:16:47 - Folios - taas mapped
+2024-08-01 12:42:06 - Folios - folios confirmed update started
+2024-08-01 12:42:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:42:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:42:08 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:43:06 - Folios - folios confirmed update started
+2024-08-01 12:43:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:43:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:43:09 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:43:10 - Error: 'NoneType' object is not subscriptable
+2024-08-01 12:44:11 - Folios - servicename cleaning done
+2024-08-01 12:44:41 - Folios - taas mapped
+2024-08-01 14:30:19 - Folios - folios confirmed update started
+2024-08-01 14:30:23 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:30:24 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:30:26 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:30:28 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:31:41 - Folios - servicename cleaning done
+2024-08-01 14:31:58 - Folios - taas mapped
+2024-08-01 14:44:49 - Folios - folios confirmed update started
+2024-08-01 14:44:50 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:44:50 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:44:52 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:44:53 - Error: 'NoneType' object is not subscriptable
+2024-08-01 14:45:49 - Folios - servicename cleaning done
+2024-08-01 14:46:06 - Folios - taas mapped
+2024-08-01 15:06:47 - Folios - folios confirmed update started
+2024-08-01 15:06:52 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:06:52 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:06:53 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:06:54 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:07:53 - Folios - servicename cleaning done
+2024-08-01 15:08:10 - Folios - taas mapped
+2024-08-01 15:30:07 - Folios - folios confirmed update started
+2024-08-01 15:30:08 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:30:08 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:30:10 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:30:11 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:31:23 - Folios - servicename cleaning done
+2024-08-01 15:31:40 - Folios - taas mapped
+2024-08-01 15:39:35 - Folios - folios confirmed update started
+2024-08-01 15:39:36 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:39:36 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:39:38 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:39:39 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:40:35 - Folios - servicename cleaning done
+2024-08-01 15:40:52 - Folios - taas mapped
+2024-08-01 15:50:29 - Folios - folios confirmed update started
+2024-08-01 15:50:29 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:50:30 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:50:31 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:50:33 - Error: 'NoneType' object is not subscriptable
+2024-08-01 15:51:23 - Folios - servicename cleaning done
+2024-08-01 15:51:39 - Folios - taas mapped
+2024-08-01 16:04:55 - Folios - folios confirmed update started
+2024-08-01 16:04:55 - Error: 'NoneType' object is not subscriptable
+2024-08-01 16:04:56 - Error: 'NoneType' object is not subscriptable
+2024-08-01 16:04:57 - Error: 'NoneType' object is not subscriptable
+2024-08-01 16:04:58 - Error: 'NoneType' object is not subscriptable
+2024-08-01 16:05:59 - Folios - servicename cleaning done
+2024-08-01 16:06:18 - Folios - taas mapped
+2024-08-01 17:06:16 - Folios - folios confirmed update started
+2024-08-01 17:07:47 - Folios - folios confirmed update finished
+2024-08-01 17:07:47 - Folios - folios inhouse update started
+2024-08-01 17:07:48 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:48 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:48 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:49 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:49 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:50 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:50 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:50 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:51 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:51 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:52 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:52 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:53 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:07:53 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:10:32 - Folios - folios confirmed update started
+2024-08-01 17:12:03 - Folios - folios confirmed update finished
+2024-08-01 17:12:03 - Folios - folios inhouse update started
+2024-08-01 17:12:03 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:03 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:04 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:04 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:05 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:05 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:05 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:06 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:06 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:07 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:08 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:08 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:10 - Error: 'NoneType' object is not subscriptable
+2024-08-01 17:12:40 - Folios - folios inhouse update finished
+2024-08-01 17:12:40 - Folios - folios checkedout update started
+2024-08-01 17:17:50 - Folios - folios checkedout update finished
+2024-08-01 17:17:50 - Folios - folios canceled and noshow update started
+2024-08-01 17:18:17 - Folios - folios canceled and noshow update finished
+2024-08-01 17:18:46 - Folios - folios confirmed update started
+2024-08-01 17:19:02 - Folios - folios confirmed update finished
+2024-08-01 17:19:02 - Folios - folios inhouse update started
+2024-08-01 17:19:24 - Folios - folios inhouse update finished
+2024-08-01 17:19:24 - Folios - folios checkedout update started
+2024-08-01 17:20:02 - Folios - folios checkedout update finished
+2024-08-01 17:20:02 - Folios - folios canceled and noshow update started
+2024-08-01 17:20:04 - Folios - folios canceled and noshow update finished
+2024-08-01 17:20:55 - Folios - servicename cleaning done
+2024-08-01 17:23:35 - Folios - taas mapped

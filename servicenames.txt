@@ -1,0 +1,667 @@
+Audiovisual Revenue
+Bar 1 Restaurant Hot Drinks
+Bar 2 Non alcolici/Non alcoholic CH1
+Bar 2 Non alcolici/Non alcoholic CH2
+Bar 2 Non alcolici/Non alcoholic CH3
+Bar 2 Non alcolici/Non alcoholic
+Bar Beer
+Bar Food
+Bar Hot drinks
+Bar Ice cream
+Bar Non alcoholic
+Bar Sparkling wine & champagne
+Bar Spirits
+Bar Wine
+Beverage revenue - Beer Banqueting
+Beverage revenue - Beer Bar 2
+Beverage revenue - Beer Bar
+Beverage revenue - Beer Minibar
+Beverage revenue - Beer Restaurant 1
+Beverage revenue - Beer Room Service
+Beverage revenue - coffee/tea Banqueting
+Beverage revenue - coffee/tea Bar 2
+Beverage revenue - coffee/tea Bar
+Beverage revenue - coffee/tea Minibar
+Beverage revenue - coffee/tea Restaurant 1
+Beverage revenue - coffee/tea Room Service
+Beverage revenue - non-alcoholic beverages Banqueting
+Beverage revenue - non-alcoholic beverages Bar 2
+Beverage revenue - non-alcoholic beverages Bar
+Beverage revenue - non-alcoholic beverages Minibar
+Beverage revenue - non-alcoholic beverages Restaurant 1
+Beverage revenue - non-alcoholic beverages Room Service
+Beverage revenue - Sparkling wine Banqueting
+Beverage revenue - Sparkling wine Bar 2
+Beverage revenue - Sparkling wine Bar
+Beverage revenue - Sparkling wine Minibar
+Beverage revenue - Sparkling wine Restaurant 1
+Beverage revenue - Sparkling wine Room Service
+Beverage revenue - Spirits Banqueting
+Beverage revenue - Spirits Bar 2
+Beverage revenue - Spirits Bar
+Beverage revenue - Spirits Minibar
+Beverage revenue - Spirits Restaurant 1
+Beverage revenue - Spirits Room Service
+Beverage revenue - Wine Banqueting
+Beverage revenue - Wine Bar 2
+Beverage revenue - Wine Bar
+Beverage revenue - Wine Minibar
+Beverage revenue - Wine Restaurant 1
+Beverage revenue - Wine Room Service
+Breakfast à la carte
+Breakfast Child 1
+Breakfast Child 2
+Breakfast Child 3
+Breakfast Child
+Breakfast
+Conference Food
+Conference Ice cream
+Conference Non alcoholic
+Conference Room rental
+Food - A la carte Revenue Banqueting
+Food - A la carte Revenue Bar 2
+Food - A la carte Revenue Bar
+Food - A la carte Revenue Minibar
+Food - A la carte Revenue Restaurant 1
+Food - A la carte Revenue Room Service
+Food - Board Revenue
+Full-board Adult
+Full-board Babybed
+Full-board Child 1
+Full-board Child 2
+Full-board Child 3
+Half-board Adult
+Half-board Child 1
+Half-board Child 2
+Half-board Child 3
+Mezza pensione adulto/Half-board adult
+Mezza pensione bambino/Child 1
+Mezza pensione bambino/Child 2
+Mezza pensione bambino/Child 3
+Minibar Beer
+Minibar Food
+Minibar Hot drinks
+Minibar Non alcoholic
+Minibar Sparkling wine & champagne
+Minibar Spirits
+Minibar Wine
+Naplata usluge/Service charge
+Prima colazione/Breakfast CH1
+Prima colazione/Breakfast CH2
+Prima colazione/Breakfast CH3
+Prima colazione/Breakfast
+Restaurant 1 Beer
+Restaurant 1 Food
+Restaurant 1 Hot drinks
+Restaurant 1 Ice cream/Sladoled
+Restaurant 1 Ice cream
+Restaurant 1 Non alcoholic
+Restaurant 1 Sparkling wine & champagne
+Restaurant 1 Spirits
+Restaurant 1 Water/Voda
+Restaurant 1 Wine
+Restaurant Beer/Pivo
+Restaurant Beer
+Restaurant Breakfast/Restauran Dorucak
+Restaurant Champagne /Pjenušava pica
+Restaurant Food/Hrana
+Restaurant Food
+Restaurant Hot drinks/Topli napitci
+Restaurant Hot drinks
+Restaurant Impuls Ice/Sladoled
+Restaurant Non alc./Bezalk. pica
+Restaurant Non alcoholic
+Restaurant Pasti/Food CH2
+Restaurant Pasti/Food CH3
+Restaurant Pasti/Food
+Restaurant 1 Restaurant Champagne /Pjenšsava
+Restaurant 1 Restaurant Spirits/Žestoka alk. pica
+Restaurant Sparkling wine & champagne
+Restaurant Spirits/Žestoka alk. pica
+Restaurant Spirits
+Restaurant Vino/Wine CH2
+Restaurant Vino/Wine CH3
+Restaurant Vino/Wine
+Restaurant Wine/Vino
+Restaurant Wine
+Restaurant  Wine
+Room Rental Revenue
+Room Service Beer
+Room Service charge
+Room Service Food
+Room Service Hot drinks
+Room Service Ice cream
+Room Service Non alcoholic
+Room Service Sparkling wine & champagne
+Room Service Spirits
+Room Service Wine
+Shop 20p.
+Treatments Massage/Wellness 20p.
+Local tax
+Voucher 0%
+Tourismusabgabe
+Commission FMTG 0%
+Breakfast Corporate
+Half-board 4-course menu
+Half-board 4-course menu children
+Breakfast Complimentary
+Half-board 3-course menu
+Half-board 3-course menu children
+Half-board children
+Bar 1 Non alcoholic
+Bar 1 Hot drinks
+Bar 1 Ice cream
+Banquet Non alcoholic
+Banquet Beer
+Banquet Wine
+Banquet Sparkling wine & champagne
+Banquet Spirits
+Banquet Hot drinks
+Banquet Food
+Banquet Ice cream
+Banquet Technical equipments hire
+Banquet Room rental
+Banquet Food HT
+Banquet Hot drinks HT
+Banquet Non alcoholic HT
+Banquet Technical equipment hire HT
+Banquet Food GT
+Banquet Hot drinks GT
+Package Profit/Loss non alcoholic
+Spa Bistro Non alcoholic
+Spa Bistro Beer
+Spa Bistro Wine
+Spa Bistro Sparkl wine & champagne
+Spa Bistro Spirits
+Spa Bistro Hot drinks
+Spa Bistro Food
+Spa Bistro Ice cream
+Transport internal
+Eventticket 13%
+Treatments Massage/Wellness.
+Revenue Products SPA
+Doctor Medical Treatment
+SPA Medical Treatment
+Half-board lunch
+Trainer lessons
+Greenfees/Rangesfees
+Assistance
+Assistance
+Assistance Room
+Golf supplies
+Animation
+Animation
+Partner Voucher 0%
+Banquet Non alcoholic GT
+Banquet Technical equipment hire GT
+Banquet Food
+SPA Medical Treatment
+SPA Medical Treatment
+Doctor Medical Treatment
+F&B Medical
+Resortkredit William Premium Services
+Cream Rich 100ml
+Cream Rich 75 ml
+Express nail hardener
+Gelatic nail polish speed dry 50ml
+Gentle Touch Hand Mousse 75 ml
+Heel Rescue Balm Hornhautpfl. 75ml
+Magic Manicure 2 Phase Handpeeling 100ml
+Mango nail serum
+Nail polish dry spray 50ml
+Nice Day 75ml
+Ridgefiller 10ml
+Seasons Greeting Handcreme 30 ml
+Sensitive nail hardener
+Aufpreis Bad
+Balance Coco Immersion Bath
+Balance Coco Immersion bath for 2
+Detox Alkaline Bath
+Detox Alkaline Bath for 2
+Moor bath - WinterGolf
+Oligomer Pur
+Oligomer Pur for 2
+Buddy Service Liegenreservierung
+Diverses
+Kaution Leselampe
+Metabolic Balance - Das Aktivprogramm
+Metabolic Balance - Das Kochbuch
+Metabolic Balance - Das Kochbuch Nr. 2
+Metabolic Balance - Für Diabetiker
+Metabolic Balance - Für Vegetarier
+Tip
+Tip Entnahme
+Dr. Eberhard - Acht Kräuter 10 ml
+Dr. Eberhard - Adventöl 10 ml
+Dr. Eberhard - Blutorange 10 ml
+Dr. Eberhard - Citrone 10 ml
+Dr. Eberhard - Energie Tanken 10 ml
+Dr. Eberhard - Eukalyptus 10 ml
+Dr. Eberhard - Freier Atem 10 ml
+Dr. Eberhard - Latschenkiefer 5 ml
+Dr. Eberhard - Lavendel Barreme 10 ml
+Dr. Eberhard - Lemongrass 10 ml
+Dr. Eberhard - Limette (dest.) 10 ml
+Dr. Eberhard - Niaouli 10 ml
+Dr. Eberhard - Orange süss 10 ml
+Dr. Eberhard - Pfefferminze 10 ml
+Dr. Eberhard - Pine Swiss 5 ml
+Dr. Eberhard - Rosenblüten 10 ml
+Dr. Eberhard - Stille Meditation 10 ml
+Dr. Eberhard - Winterzauber 10 ml
+Dr. Eberhard - Ylang Ylang I Bio 5 ml
+Dr. Eberhard - Zirbe/Kiefer 5 ml
+Dr. Eberhard - Zu Hause 10 ml
+Dr. Eberhard -Fichte 5 ml
+Dr. Eberhardt - Bitterorange Bio 5 ml
+Dr. Eberhardt - Lemongras Bio 10 ml
+Dr. Eberhardt - Mandarine Grün Bio 5 ml
+Dr. Eberhardt - Rosmarin 10 ml 
+Dr. Eberhardt - Tausend Dank 10ml
+DR. Eberhardt - Welcome 10 ml
+Base 750 g
+Bio Spirulina
+Bitterstar 8 Kräuter Pulver
+Chlorella Bio
+Hepapur
+Magnesium Citrat
+Mariendistel
+Natur Zeolith Vulkangestein
+Sango Coralle 150g Pulver
+Vitamin D3 Tropfen
+Zell Aktiv / Basen Vitalmischung
+Aroma Spa Algae pack Purification
+Aroma Spa Body Firming
+Aroma Spa Moisturizing
+Aroma Spa moor pack
+Balance special Peel
+Body & Face with Aloe Vera & Alge
+Detox basic salt peel
+Detox Body
+Liver Detox Ritual 30 min.
+Love your Age Ritual
+Lymphatic Base Wrapping 30 min.
+Orange sugar peel
+Papaya & aloe sea-salt peel
+Relax & Move
+Salt on my Skin
+Voilé de Satin
+"Men´s Thing" Peau Neuve au Masculin
+15 SPA-Minuten Beauty
+Aufpreis Beauty
+Aufpreis Kosmetik
+Bio Lifting
+Citadine
+Color Nail Varnish
+Detox Face
+Exklusiv Rohini Regenerating Treatment
+Eye Mask
+Eyebrow Shaping
+Eyebrow tinting
+Eyelash tinting
+Facial Massage with Active Concentrate
+Feet Ritual
+Feet Ritual with gel polish
+Feet Ritual with nail varnish
+Hair Removal Armpits
+Hair Removal Chest
+Hair Removal Face
+Hair Removal Lip
+Hand Ritual
+Hand Ritual with gel polish
+Hand Ritual with nail varnish
+Hydra Original
+Intensive Moisture
+Intention Jeunesse
+Love Your Age - Power Treatment
+Manicure Classic
+Manicure Classic with gel polish
+Manicure Classic with nail varnish
+Manicure with peeling 
+Männer Spezial-Stressless
+Männner Spezial - Energieboost
+Men - Energybooster
+Men - facial
+Men - Stressless
+Microdermabrasion 10 min.
+Microdermabrasion Special
+P5 Soin Minceur
+Pedicure Classic 
+Pedicure Classic mit gel polish
+Pedicure Classic with nail varnish
+Perfect Regard
+Pionnier Révélateur de Jeunesse
+Sculpt Zone
+Sensual Repair
+Strip Nail Varnish
+ Active Agent BLUE Sportsgel
+Active Agent RED Sportsgel
+1 x 50 SPA Minuten
+15 SPA-Minuten Massage
+30 SPA Minuten
+Acquapura Costomised 30 min.
+Acquapura Signature Body&Bike
+Acquapura Signature Flow Fascia Massage
+Aroma Senses Massage 50 min.
+Aufpreis Massage
+Aufpreis Massage
+Balance Signature Ritualmassage 60 Min.
+Breuss Massage 50 min
+Combi Flex 
+Cranio Sacral Therapy 30 min.
+Cranio Sacral Therapy 50 min.
+De-Stress-Treatment 50 min.
+Float & Fit Lymph Stimulation 30 min.
+Float & Fit Lymph Stimulation 60 min.
+Full Body Massage 50 min.
+Full Body Massage 80 min.
+Gentle Spinal Regulation
+Happiness on 2 wheels
+Head, Neck and Shoulder Massage
+Herbal Stamp Massage 60 min.
+Herbal Stamp Massage 80 min.
+Hot Stone 50 min.
+Hot Stone 80 min.
+In der Mitte ich Ritual 50 min.
+In der Mitte ich Ritual 80 min.
+Indian Style Four Hands On 70 min.
+Indobliss 50 min.
+Indobliss 80 min.
+Kombi Flex Belli + Reflexation Massage
+Lomi-Lomi Nui 60 min.
+Lomi-Lomi Nui 80 min.
+No Tox 80 min.
+Nuad Tao Coconut Delight 50 min.
+Partial Body Massage 50 min.
+Partial Body Relax & Fit 30 min.
+Reflexation Massage
+Slow Down 50 min.
+Sports Massage 30 min.
+Sports Massage 50 min.
+Tailormade Relax & Fit 50 min.
+Tailormade Relax & Fit 80 min.
+Wadl-Massage mit Fußbad
+Ärzlt. Koordinationsgespräch
+Ärztl. Transfergespräch
+Auswertungsgespräch HRV&BIA
+Blutabnahme/Vitalstoffanalyse
+MB Liver Detoxification ritual 30 min.
+MB Lymphatic Base Wrapping 30 min.
+Med. Lecture with Dr. Claudia Mainau
+Metabolic-Plan-Besprechung
+Personal Coaching 30 min.
+Welcome round
+Cheese & Fruit Plate
+Chocolate & Fruit Plate
+Sparkling Water
+Sparkling Wine
+Uhudler
+Acquapura SPA Break
+Acquapura Spa Deluxe
+Aufpreis Beauty
+Babymoon
+Generali - Rundumgesundbad
+Metabolic Balance Med Retreat
+Package Services unused 10%
+Package Services unused 20%
+Aloe Vera BioUrsaft 330ml
+Aloe Vera BioUrsaft 750ml
+Avellana Oil Serum 30 ml
+Balancing Cream 50ml
+Balancing Oil 30ml
+Body & Power Lotion for Men 150ml
+Body Lotion  200ml
+Calming & Regenerating Elixir 30ml
+Care Balm 50ml
+Cleansing & Shaving Gel for Men 50ml
+Cleansing Cream 50ml
+Cleansing Gel 63ml
+Detox "Europea" 50ml
+Detoxing Oil 30 ml
+Effekt Serum for Men 50ml
+Enzyme Peeling
+Gentle Peeling 50 ml
+Harmonising Oil 30 ml
+Harmonizing-Tonic 100ml
+Intensive Eye Liposome 20 ml
+Lippenbalsam 7ml
+Love Your Age Body Cream
+Love Your Age Eye Contour 15ml
+Love Your Age Power Cream 50ml
+Love Your Age Repairbalm 50ml
+Love Your Age Sensual Repair Mask
+Lover Your age Decolleté
+Moisturizing Cream 50ml
+Moisturizing-Spray 100ml
+Nourishing Oil 30ml
+Nourishing Rose Cream 50 ml
+Refill SesamKraft 250g
+Regenerationsmaske
+Regenerationsmaske 5 ml
+Revitalising Gel 63ml
+rohini Regenerating Cream 50ml
+rohini Regenerating Fluid 30ml
+rohini Regenerating Serum 30ml
+rohini Regenerating Serum 3x3ml
+Sensitiv-Gel 50ml
+SesamKraft 250g
+Skin & Beard Oil 15 ml
+Sun Harmony Body Protect Cream
+Sun Harmony Face Protect Cream
+Vitalizing Oil 30ml
+Vitamin Booster 50ml
+Accept Comfort Mask 50ml
+Accept Crème Haute Tolérance 50ml
+Age Optimal Soin Lissant Rides 50 ml
+Algodéfense SPF 20 Emulsion Rides Multi-Protectrice 50 ml
+Aqua Optimal Soin Hydratant Apaisant 50 ml
+Beauty Ritual Expert Jeunesse
+Beauty Ritual Set
+Brume Marine Eau Soin Parfumee 100 ml
+CC Crème Nr. 1 50 ml
+CC Crème Nr. 2 50 ml
+Celluli Attack Concentré 100 ml
+Celluli Night Coach Sleeping Masque 150 ml
+Citadine Crème Sorbet Face and Eye 50 ml
+Citadine Masque Défatigant Éclat aux Argiles 50 ml
+Citadine Peeling Minute Ultra Nettoyant 125 ml
+Contour Jeunesse 15 ml
+Contour Radieux Masque Défatigant Yeux 30 ml
+Crème 30 Solution Repulpante 1st Rides 50 ml
+Cyfolia Contour Creme Defroissante 15 ml
+Cyfolia Jeunesse Creme Rides Nouvet 50 ml
+Cyfolia Jeunesse Creme Rides REFILL 50 ml
+Daily Routine/ Homme Duo
+Décolleté Parfait 50 ml
+Douceur Intemporelle Crème Barrière Restructurante 50 ml
+Douceur Marine Crème Apaisant Veloutée
+Douceur Marine Masque Apaisant Cocon 50 ml
+Douceur Soleil Lait Après Soleil 250ml
+Doux Contour Démaquillant Waterproof 150 ml
+Doux Visage Crème 150 ml
+Duo Rosee Visage 2x250 ml
+E au d´ète summer mist
+Eau Micellaire 150 ml
+Emergence Sérum Peau-Neuve Unifiant 30 ml
+Expert Jeunesse Crème Correction Rides 50 ml
+Expert Jeunesse Masque Lissant Rides 50 ml
+Expertise Age Contour Créme Intense Jeunese Yeux 15 ml
+Global Pur Gel Nettoyant 150 ml
+Gommage Corps Tonifiant 150 ml
+Hydra Original Set
+Hydra Originel Crème Fondante Désaltérante 50 ml
+Hydracontinue Flash Hydratant 12 H 30 ml
+Hydralgue Nuit Crème Oncteuse Repulpante 50 ml
+Hydralque Masque Désaltérant Réhydratant 50 ml
+Lotion Eau Marine 250 ml
+Lotion P5 Concentré Rondeurs Localisées 150 ml
+Masque Chauffant Nettoyant 50 ml
+Morpho Designer Émulsion Crystal Affinante 150 ml
+Night & Day Intensive Program 
+Nutritionelle Crème SOS Sércheresse 50 ml
+Oléocrème Lait Corps 250 ml
+Oléocreme Soin des Mains Haute Nutrition 50 ml
+Oligoforce Advanced 30 ml
+Oligomarine Tonique Peau Nette 250 ml
+Oligomer Bien-Etre Gelee de Douche 200 ml
+Oligomer Pure Sachet 40 g
+Oligomer Silhouette 8x40 g
+Oligopur Crème Contrôle Hydra-Matifiante 50ml 
+Oligopur Gel Nettoyant 150ml
+Organic Cyfolia Set
+Peeling Resurfacant 50 ml
+Peeling Végetal 50 ml
+Perfect Visage Lait Démaquillant Douceur 250 ml
+Pionnièr XMF Rich Cream 50ml
+Pionnière Fluide Reprogrammant Regard 15 ml 
+Pionnière Sérum Retexturant Éclat 30 ml
+Pionniere XMF Haute Performance Ride et Taches
+Pionnière XMF Masque 50 ml
+Pionnière XMF Supreme Cream 50 ml 
+Prebioforce Concentré Équilibrant Apaisant 30 ml
+Rasage Perfect Après-Rasage Apaisant 100 ml
+Rasage Perfect Masque á Raser 150 ml
+Recharge Nuit Crème 50 ml
+Remodèle Gelée Corps Tonique 150 ml
+Resubstance Crème Riche Nouveau Rebond 50 ml
+Résultat Soleil Crème Autobronzante 125ml
+ResurfaSlim 150 ml
+Revelation Lumiere Creme Teint 50 ml
+Revelation Lumiere Serum Teint 30 ml
+Rituel Oligomer Face&Body Set
+Rosée Soin Huile Régénération Éclat 30 ml
+Rosée Visage Lotion 250 ml
+Scrub Marin 50 ml
+Seatonic 125 ml
+Solution Soleil Crème Solaire SPF15 125ml
+Solution Soleil Crème Solaire SPF30 125ml
+Solution Soleil Crème Solaire SPF30 50ml
+Solution Soleil Ocean+SPF50 50ml
+Souffle Marin Crème Moussant Nettoyante 150 ml
+Souffle Marin Sérum Oxygéant Énergisant 30 ml
+Structuriste Crème Lift Fermeté 50 ml
+Structuriste Serum Fermete Contours
+Sun Reset Crème Solaire Protectrice SPF50 50ml
+Sunactive Crème Solaire SPF30 50ml
+Test
+test 2
+Test 3
+Travel Set 24
+Trésor des Mers Crème Corps 150 ml
+Trésor des Mers Huile Sublimatrice 100 ml
+Faszienrolle
+Faszienrolle Mini
+Flossband gross
+Flossband klein
+Körperöl Birke
+Körperöl Grüner Tee Ingwer
+Körperöl Holunder Bergamotte
+Körperöl Honig Ingwer
+Körperöl Kokos Minze
+Körperöl Lavendel Malve
+Körperöl Lavendel Rosalina
+Körperöl Lavendel Rosenholz
+Körperöl Lemon Hibiscus
+Körperöl Limette Bambus
+Körperöl Orange Lemongras
+Körperöl Orange Spirit
+Körperöl Papaya Aloe
+Körperöl Perlmut
+Körperöl Wildrose
+Körperöl Zirbe
+Kühlgel
+Massage Cups groß
+Massage Cups klein 2 Stk.
+Massage Cups mittel 2 Stk.
+Mini Theraband 
+Pinofit-Patch
+Wärmebalsam
+Polar A370
+Polar M430
+Polar M460
+Polar M600
+Polar Wrist Strap A370
+Polar Wrist Strap M600
+Private Spa Balance "Aquarell" Sekt ab 14 uhr
+Private Spa Balance "Aquarell" Sekt bis 14 uhr
+Private Spa Balance "Aquarell" Wein ab 14 uhr
+Private Spa Balance "Aquarell" Wein bis 14 uhr
+Private Spa Balance "Trilogie" Sekt ab 14 Uhr
+Private Spa Balance "Trilogie" Sekt bis 14 uhr
+Private Spa Balance "Trilogie" Wein ab 14 Uhr
+Private Spa Balance "Trilogie" Wein bis 14 uhr
+Aufpreis Gruppentraining
+DAY SPA
+Einweisung Kraft/Koordination
+HRV 24 Std.
+HRV Besprechung Package
+HRV Consulting
+HRV Kurzmessung 10 min
+In the center ME ritual 90min
+Kinesiotaping groß
+Personal Coaching 30 min.
+Personal Coaching 50 Min. 
+Personal Coaching 60 min.
+Personal Training 30
+Personal Training 60
+Personal Yoga Therapy
+Qi Gong 60 min
+Welcome round 
+Yoga 60 min
+Restaurant Imago Non alcoholic
+Restaurant Imago Beer
+Restaurant Imago Wine
+Restaurant Imago Sparkling wine & champagne
+Restaurant Imago Spirits
+Restaurant Imago Hot drinks
+Restaurant Imago Food
+Restaurant Imago Ice cream
+Restaurant Imago Food
+Restaurant Imago Food
+Restaurant Imago Beer
+Hotelbar Atrium Non alcoholic
+Hotelbar Atrium Beer
+Hotelbar Atrium Wine
+Hotelbar Atrium Sparkling wine & champagne
+Hotelbar Atrium Spirits
+Hotelbar Atrium Hot drinks
+Hotelbar Atrium Food
+Hotelbar Atrium Ice cream
+Hotelbar Atrium Sparkling wine & champagne
+Gartenrestaurant Bistro Non alcoholic
+Gartenrestaurant Bistro Beer
+Gartenrestaurant Bistro Wine
+Gartenrestaurant Bistro Sparkl wine & champagne
+Gartenrestaurant Bistro Spirits
+Gartenrestaurant Bistro Hot drinks
+Gartenrestaurant Bistro Food
+Gartenrestaurant Bistro Ice cream
+TAILORMADE  MASSAGE
+Stress Away
+Signature Flow
+Head&Neck Massage
+Head and Neck Massage
+Kombi Flex
+Tailor Made Massage
+Acquapura Signature Flow
+Sportmassage
+Restaurant 1 Restaurant Champagne /Pjenšsava pica
+KLASSISCHE MASSAGE
+R�CKEN & NACKEN INTENSIV
+Accommodation
+Active flow intense
+Aufpreis H
+Beverage revenue 
+FLOAT & FIT LYMPH STIMULATING
+Gedankenpause
+Augenbrauen
+BEAUTY EXPRESS
+Deep Relax Stone Massage
+Spezial-Energieboost
+Sanfte Wirbelregulation
+PP: Tailormade
+Restaurant 1 Restaurant Champagne
+Roomservice Beer
+Roomservice Non alcoholic
+Roomservice Food
+Roomservice Wine
