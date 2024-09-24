@@ -429,7 +429,7 @@ def servicename_cleaning():
 
 
 
-    with open('servicenames.txt', 'r') as file:
+    with open('../servicenames.txt', 'r') as file:
         find_replace_strings = [line.strip() for line in file if line.strip()]
         for find_string in find_replace_strings:
             update_query = """
@@ -469,7 +469,7 @@ WHERE V2I_Folios_Apaleo.FA_taacode = '0';
 
     cursor_target.execute(update_taas)
 
-    with open('KP_taas.txt', 'r') as file:
+    with open('../KP_taas.txt', 'r') as file:
         find_replace_strings = [line.strip() for line in file if line.strip()]
         for find_string in find_replace_strings:
             update_query = """
