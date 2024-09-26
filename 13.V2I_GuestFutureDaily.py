@@ -39,6 +39,6 @@ for row in cursor_target.fetchall():
     ghd_date = row[0]
     ghd_filename = f"guestfuturedaily_{ghd_date}.7z"
     print(ghd_filename)
-    cursor_target.execute("""DELETE FROM  V2I_GuestFutureDaily WHERE GFD_mpehotel  IN (49,50,26,27,13,33,28) AND GFD_sysimport LIKE "%guestfuturedaily_2%" AND GFD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 12 DAY)""",)
+    cursor_target.execute("""DELETE FROM  V2I_GuestFutureDaily WHERE GFD_mpehotel  IN (49,50,26,27,13,33,28,15) AND GFD_sysimport LIKE "%guestfuturedaily_2%" AND GFD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 12 DAY)""",)
     connection_target.commit()
 

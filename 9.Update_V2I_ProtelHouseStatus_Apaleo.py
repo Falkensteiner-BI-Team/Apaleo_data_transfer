@@ -18,7 +18,7 @@ cursor_target = connection_target.cursor()
 
 
 def update_Inventory_Apaleo(import_date):
-    properties = ["FCZ", "FSA", "FKP", "FST", "FHS","FBL", "FSG","FSV"]
+    properties = ["FCZ", "FSA", "FKP", "FST", "FHS","FBL", "FSG","FSV","FCA"]
 
     for property in properties:
         get_oos = APIClient(
