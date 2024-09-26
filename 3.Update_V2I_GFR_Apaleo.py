@@ -120,6 +120,7 @@ def Insert_API_Results(importdate):
 
 
 
+
 def Insert_Confirmed_Group_Booking_GFR(import_date):
     rateplan_typ_mapping = {
 
@@ -183,7 +184,7 @@ def Insert_Confirmed_Group_Booking_GFR(import_date):
                     str(block['id']),
                     str(block["property"]["id"])+'-'+str(block['id']),
                     block["property"]["id"][-2:],
-                    datetime.fromisoformat(block['from']).strftime('%Y-%m-%d'),
+                    datetime.fromisoformat(block['created']).strftime('%Y-%m-%d'),
                     datetime.fromisoformat(block['from']).strftime('%Y-%m-%d'),
                     datetime.fromisoformat(block['to']).strftime('%Y-%m-%d'),
                     block['unitGroup']['code'],
@@ -206,8 +207,6 @@ def Insert_Confirmed_Group_Booking_GFR(import_date):
 
 
     connection_target.commit()
-
-
 
 
 
