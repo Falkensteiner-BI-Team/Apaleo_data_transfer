@@ -2794,3 +2794,60 @@
 2024-09-26 15:06:32 - GHD - GHD started...
 2024-09-26 15:43:40 - GHD - GHD Finished...
 2024-09-26 15:48:55 - GuestHistoryDaily - GuestHistoryDaily started...
+2024-09-26 15:54:27 - GuestHistoryDaily - GuestHistoryDaily finished...
+2024-09-26 16:45:55 - GHD - GHD started...
+2024-09-26 17:26:26 - GHD - GHD Finished...
+2024-09-27 03:02:34 - GFR - GFR  update started
+2024-09-27 03:02:34 - GFR - GFR  Inserting Api results...
+2024-09-27 03:02:34 - GHR - start inserting api results..
+2024-09-27 03:12:27 - GFR - GFR  Inserting Api results from reservations done!
+2024-09-27 03:14:05 - GFR - GFR  Inserting Api results from blocks done!
+2024-09-27 03:14:05 - GFR - GFR  preprocessing and updates
+2024-09-27 03:30:31 - GHR - Inserted API results..
+2024-09-27 03:39:03 - GFR - GFR  leistaccs updated
+2024-09-27 03:39:08 - GFR - GFR  mpehotel updated
+2024-09-27 03:44:54 - GFR - GFR  katnr updated
+2024-09-27 03:44:58 - GFR - GFR  market segment updated
+2024-09-27 03:45:01 - GFR - GFR  markets updated
+2024-09-27 04:13:12 - GFR - GFR  sharenr updated
+2024-09-27 04:13:12 - GFR - GFR  preprocessing done 
+2024-09-27 04:13:12 - GFR - GFR updating room number
+2024-09-27 04:13:22 - GFR - GFR  room update done
+2024-09-27 04:17:47 - GHR - GHR_leistacc updated 
+2024-09-27 04:17:50 - GHR - GHR_mpehotel updated 
+2024-09-27 04:17:56 - GHR - GHR_katnr updated 
+2024-09-27 04:17:56 - GHR - GHR  market segment updated
+2024-09-27 04:17:57 - GHR - GHR_market updated 
+2024-09-27 04:51:33 - GHR - GHR_sharenr updated 
+2024-09-27 04:51:44 - GHR - GHR_zimmer  updated 
+2024-09-27 04:53:04 - Folios - folios confirmed update started
+2024-09-27 04:53:45 - Folios - folios confirmed update finished
+2024-09-27 04:53:45 - Folios - folios inhouse update started
+2024-09-27 04:54:01 - Folios - folios inhouse update finished
+2024-09-27 04:54:01 - Folios - folios groups checkedout update started
+2024-09-27 05:55:01 - Folios - folios groups checkedout update finished
+2024-09-27 05:55:01 - Folios - folios checkedout update started
+2024-09-27 05:55:17 - Folios - folios checkedout update finished
+2024-09-27 05:55:17 - Folios - folios canceled and noshow update started
+2024-09-27 05:55:21 - Folios - folios canceled and noshow update finished
+2024-09-27 06:16:04 - Folios - folios group booking update finished
+2024-09-27 06:23:18 - Folios - servicename cleaning done
+2024-09-27 06:24:57 - Folios - taas mapped
+2024-09-27 06:25:28 - GFD - GFD started...
+2024-09-27 06:25:29 - GHD - GHD started...
+2024-09-27 06:25:29 - GHDD  - started
+2024-09-27 06:46:37 - GHDD  - Fetching results...
+2024-09-27 06:47:54 - GHDD  - insert- delete.. 
+2024-09-27 06:55:11 - GHDD  - finished
+2024-09-27 07:13:25 - GHD - GHD Finished...
+2024-09-27 07:13:29 - PHS - protel house started
+2024-09-27 07:13:29 - PHS - Inventory started.. 
+2024-09-27 07:14:01 - PHS - Inventory ended... 
+2024-09-27 07:14:01 - PHS - calling select statement
+2024-09-27 07:16:15 - GFD - select statement done...
+2024-09-27 07:25:52 - PHS - fetching results
+2024-09-27 07:25:55 - PHS - updating  results
+2024-09-27 07:25:56 - PHS - updating main table... 
+2024-09-27 07:49:14 - GFD - insert completed...
+2024-09-27 07:49:23 - GuestHistoryDaily - GuestHistoryDaily started...
+2024-09-27 07:58:56 - GuestHistoryDaily - GuestHistoryDaily finished...

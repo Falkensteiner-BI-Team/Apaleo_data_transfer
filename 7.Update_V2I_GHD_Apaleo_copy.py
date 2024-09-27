@@ -68,7 +68,7 @@ WITH DetailedGHR AS (
     JOIN 
         Numbers ON Numbers.number <= DATEDIFF(main.GHR_datumbis, main.GHR_datumvon)
     WHERE 
-         main.GHR_datumimp > DATE_SUB(CURDATE(), INTERVAL 3 DAY)
+         main.GHR_datumimp > DATE_SUB(CURDATE(), INTERVAL 30 DAY) 
 ),
 
 AggregatedChildGroups AS (
