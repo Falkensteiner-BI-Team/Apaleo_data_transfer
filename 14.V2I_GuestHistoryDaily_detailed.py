@@ -11,6 +11,14 @@ connection_target = mysql.connector.connect(host='DB-FMT06', database='FMT_Repor
 cursor_target = connection_target.cursor()
 
 
+def log_message(message, file_path='Apaleo_log.txt'):
+    with open(file_path, 'a') as file:
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        file.write(f'{timestamp} - {message}\n')
+
+
+log_message("GuestHistoryDailydetailed - GuestHistoryDailydetailed started...")
+
 insert_query = """INSERT INTO V2I_GuestHistoryDaily_Detailed(GHD_leistacc,GHD_mpehotel,GHD_datum,GHD_zimmernr,GHD_roomnights,GHD_resstatus,GHD_typ,GHD_preistypgr,GHD_preistyp,GHD_anzerw,GHD_anzkin1,GHD_anzkin2,GHD_anzkin3,GHD_anzkin4,GHD_zbett,GHD_kbett,GHD_TAA,GHD_n_,GHD_g_,GHD_n_EUR,GHD_g_EUR,GHD_sysimport)
 values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
 """
@@ -29,3 +37,6 @@ for row in cursor_target.fetchall():
     cursor_target.execute(delete_query, (row[0],str(row[2]),row[16]))
     cursor_target.execute(insert_query, row)
 connection_target.commit()
+
+
+log_message("GuestHistoryDailydetailed - GuestHistoryDailydetailed finished...")

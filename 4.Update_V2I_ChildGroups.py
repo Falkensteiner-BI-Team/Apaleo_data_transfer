@@ -10,6 +10,17 @@ connection_target = mysql.connector.connect(host='DB-FMT06', database='FMT_Repor
 cursor_target = connection_target.cursor()
 
 
+
+def log_message(message, file_path='Apaleo_log.txt'):
+    with open(file_path, 'a') as file:
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        file.write(f'{timestamp} - {message}\n')
+
+
+
+
+log_message("childgroups - childgroups  update started")
+
 insert_select_query = """
 INSERT INTO V2I_ChildGroups (CG_reservationid,  CG_Age, CG_mpehotel, CG_Group)
 SELECT 
@@ -68,7 +79,7 @@ except mysql.connector.Error as err:
     #print(f"Error: {err}")
 
 
-
+log_message("childgroups - childgroups  update finished")
 
 
 

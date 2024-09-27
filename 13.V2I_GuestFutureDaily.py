@@ -10,6 +10,18 @@ import datetime as dt
 connection_target = mysql.connector.connect(host='DB-FMT06', database='FMT_Reporting', user=userdata.mysql_user(), password=userdata.mysql_password())
 cursor_target = connection_target.cursor()
 
+
+
+
+def log_message(message, file_path='Apaleo_log.txt'):
+    with open(file_path, 'a') as file:
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        file.write(f'{timestamp} - {message}\n')
+
+
+log_message("GuestfutureDaily - GuestfutureDaily started...")
+
+
 insert_query = """INSERT INTO V2I_GuestFutureDaily(GFD_leistacc,GFD_mpehotel,GFD_datumimp,GFD_datum,GFD_zimmernr,GFD_roomnights,GFD_resstatus,GFD_typ,GFD_preistypgr,GFD_preistyp,GFD_anzerw,GFD_anzkin1,GFD_anzkin2,GFD_anzkin3,GFD_anzkin4,GFD_zbett,GFD_kbett,GFD_n_logis,GFD_n_fb,GFD_n_other,GFD_n_logis_EUR,GFD_n_fb_EUR,GFD_n_other_EUR,GFD_sysimport,GFD_katnr)
 VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
 
@@ -42,3 +54,4 @@ for row in cursor_target.fetchall():
     cursor_target.execute("""DELETE FROM  V2I_GuestFutureDaily WHERE GFD_mpehotel  IN (49,50,26,27,13,33,28,15) AND GFD_sysimport LIKE "%guestfuturedaily_2%" AND GFD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 12 DAY)""",)
     connection_target.commit()
 
+log_message("GuestfutureDaily - GuestfutureDaily finished...")
