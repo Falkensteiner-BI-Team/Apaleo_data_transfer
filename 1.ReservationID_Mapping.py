@@ -2,8 +2,13 @@ import userdata
 import mysql.connector
 from APIClient import *
 import MySQLdb
+import datetime as dt
+from datetime import datetime, date, timedelta
+
 
 # FMT_Reporting MySQL Server
+
+
 
 def get_recent_reservationid_cloud(maxid):
   connection_target_azure = MySQLdb.connect(
@@ -63,12 +68,22 @@ def insert_reservationid_local(max_res_num):
         connection_target.commit()
 
 
+def log_message(message, file_path='Apaleo_log.txt'):
+    with open(file_path, 'a') as file:
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        file.write(f'{timestamp} - {message}\n')
 
+
+
+
+log_message("mapping reservation ids started...")
 #insert_reservationid_local(1) # when uploading in an empty table
 insert_reservationid_local(get_max_reservationid_local()[0][0])
 
 #insert_reservationid_local(0)
 
+
+log_message("mapping reservation ids done...")
 
 
 
