@@ -120,12 +120,85 @@ def Insert_API_Results(import_date):
                     connection_target.commit()
                     #print(params[0])
 
+
+
+
+def Insert_Confirmed_Group_Booking_GFR(import_date):
+
+
+    qry_insert = """INSERT INTO `V2I_GHR_Apaleo`(
+    `GHR_bookingid`,
+    `GHR_reservationid`,
+    `GHR_code2`,
+    `GHR_datumres`,
+    `GHR_datumvon`,
+    `GHR_datumbis`,
+    `GHR_unit_group_code`,
+     `GHR_datumcxl`,   
+     `GHR_updated`,
+     `GHR_rateplan`,
+     `GHR_typ`,
+     `GHR_reschar`,
+     `GHR_status`,
+     `GHR_datumimp`,
+     `GHR_sysimport`,
+     `GHR_Adults`,
+     `GHR_zimmer`,
+     `GHR_market_segment`)Values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+
+    qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s"""
+
+    get_folios = APIClient(
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-05-01T00:00:00Z',
+            get_token()).get_data()
+
+    if get_folios:
+
+            for folio in get_folios["folios"]:
+                property = folio["id"].split('-')[0]
+                bookingid = folio["id"]
+                reservationid = property +"-"+bookingid
+                print(folio)
+
+                params_external = (
+                    bookingid,
+                    reservationid,
+                    property[-2:],
+                    datetime.fromisoformat(folio['created']).strftime('%Y-%m-%d'),
+                    datetime.fromisoformat(folio['created']).strftime('%Y-%m-%d'),
+                    datetime.fromisoformat(folio['created']).strftime('%Y-%m-%d'),
+                    "PM",
+                    '1900-01-01',
+                    datetime.fromisoformat(folio['updated']).strftime('%Y-%m-%d'),
+                    "INTERNAL",
+                    0,
+                    0,
+                    "checkedout",
+                    str(import_date),
+                    "guesthistoryreservationapaleo_" + str(import_date),
+                    1,
+                    0,
+                    "INDIVIDUAL",
+
+                )
+                cursor_target.execute(qry_delete, (params_external[1],))
+                cursor_target.execute(qry_insert, params_external)
+
+    connection_target.commit()
+
+
+
+
+
 log_message("GHR - start inserting api results..")
 #import_date = dt.date.today() - dt.timedelta(days=1)
 import_date = dt.date.today()
-Insert_API_Results(import_date)
+#Insert_API_Results(import_date)
 import_date_str = import_date.strftime('%Y-%m-%d')
 log_message("GHR - Inserted API results..")
+
+Insert_Confirmed_Group_Booking_GFR(import_date)
+log_message("GHR - Inserted external folios results..")
 
 def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolumnapaleo, datumimp, default_value):
     update_query = f"""
@@ -139,14 +212,12 @@ def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolu
 
 
 
-
-
 Preprocess_and_Update("GHR_leistacc", "Seq_ID", "V2D_res_num_mapping", "GHR_reservationid", "Apaleo_res_ID", import_date_str, "NULL")
 log_message("GHR - GHR_leistacc updated ")
 connection_target.commit()
 
-Preprocess_and_Update("GHR_mpehotel", "PAS_Protel_ID", "V2D_Property_Attributes", "GHR_code2", "PAS_code2", import_date_str, "NULL" )
 
+Preprocess_and_Update("GHR_mpehotel", "PAS_Protel_ID", "V2D_Property_Attributes", "GHR_code2", "PAS_code2", import_date_str, "NULL" )
 log_message("GHR - GHR_mpehotel updated ")
 connection_target.commit()
 
@@ -155,14 +226,17 @@ Preprocess_and_Update("GHR_katnr", "PRC_katnr", "V2D_ProtelRoomCategories", "GHR
 log_message("GHR - GHR_katnr updated ")
 connection_target.commit()
 
+
 cursor_target.execute(f"""UPDATE  V2I_GHR_Apaleo SET GHR_market_segment= 'MICEGR' WHERE GHR_rateplan LIKE '%GR%' AND (GHR_market_segment = 'INDIVIDUAL' OR GHR_market_segment IS NULL) AND DATE(GHR_datumimp)  = '{import_date_str}' """,)
 cursor_target.execute(f"""UPDATE  V2I_GHR_Apaleo SET GHR_market_segment= 'LEISUREGR' WHERE GHR_rateplan LIKE '%CR%' AND (GHR_market_segment = 'INDIVIDUAL' OR GHR_market_segment IS NULL) AND DATE(GHR_datumimp) = '{import_date_str}' """,)
 log_message("GHR - GHR  market segment updated")
 connection_target.commit()
 
+
 Preprocess_and_Update("GHR_market", "MK_Nr", "V2D_Apaleo_Market", "GHR_market_segment", "Apaleo_Mkt_code", import_date_str,"NULL")
 log_message("GHR - GHR_market updated ")
 connection_target.commit()
+
 
 Preprocess_and_Update("GHR_sharenr", "Seq_ID", "V2D_res_num_mapping", "GHR_bookingid_sharer", "Apaleo_res_ID", import_date_str, "NULL")
 log_message("GHR - GHR_sharenr updated ")
@@ -181,12 +255,12 @@ def Update_roomnr(datumimp):
         WHERE  DATE(v.GHR_datumimp) = '{datumimp}'
         """
 
-    cursor_target.execute(update_query_ , )
+    cursor_target.execute(update_query_, )
 
     connection_target.commit()
 
 
 Update_roomnr(import_date_str)
 
-log_message("GHR - GHR_zimmer  updated ")
+log_message("GHR - GHR_zimmer updated")
 connection_target.commit()
