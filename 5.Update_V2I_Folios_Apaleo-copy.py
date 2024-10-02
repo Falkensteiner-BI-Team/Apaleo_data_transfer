@@ -79,7 +79,7 @@ def Insert_Confirmed_Res():
             pass
 
 
-Insert_Confirmed_Res()
+#Insert_Confirmed_Res()
 
 log_message("Folios - folios confirmed update finished")
 
@@ -158,7 +158,7 @@ def Insert_Inhouse_Res():
         pass
 
 
-Insert_Inhouse_Res()
+#Insert_Inhouse_Res()
 log_message("Folios - folios inhouse update finished")
 
 
@@ -237,7 +237,7 @@ def Insert_CheckedOut_Group_Booking():
         pass
 
 
-Insert_CheckedOut_Group_Booking()
+#Insert_CheckedOut_Group_Booking()
 
 log_message("Folios - folios groups checkedout update finished")
 
@@ -312,7 +312,7 @@ def Insert_CheckedOut_Res():
         pass
 
 
-Insert_CheckedOut_Res()
+#Insert_CheckedOut_Res()
 log_message("Folios - folios checkedout update finished")
 
 
@@ -380,7 +380,7 @@ def Insert_Canceled_NoShow_Res():
         pass
 
 
-Insert_Canceled_NoShow_Res()
+#Insert_Canceled_NoShow_Res()
 
 
 log_message("Folios - folios canceled and noshow update finished")
@@ -441,7 +441,7 @@ def Insert_Confirmed_Group_Booking_Folios():
 
     connection_target.commit()
 
-Insert_Confirmed_Group_Booking_Folios()
+#Insert_Confirmed_Group_Booking_Folios()
 
 
 
@@ -459,7 +459,7 @@ def Insert_External_Folios():
 
 
         get_folios = APIClient(
-            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom='+ str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z',
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-04-01T00:00:00Z',
             get_token()).get_data()
 
         if get_folios:
@@ -516,7 +516,7 @@ def Insert_External_Folios():
         pass
 
 
-#Insert_External_Folios()
+Insert_External_Folios()
 
 log_message("Folios - external folios updated")
 
@@ -643,10 +643,10 @@ WHERE V2I_Folios_Apaleo.FA_taacode = '0';
 
     update_external_taas = """UPDATE V2I_Folios_Apaleo
                                 SET FA_taacode = CASE 
-                                                    WHEN FA_reservationid LIKE '%-FB2%' THEN 102206
-                                                    WHEN FA_reservationid LIKE '%-SP2%' THEN 106025
+                                                    WHEN FA_reservationid LIKE '%-FB%' THEN 102206
+                                                    WHEN FA_reservationid LIKE '%-SP%' THEN 106025
                                                  END
-                                WHERE FA_reservationid LIKE '%-FB2%' OR FA_reservationid LIKE '%-SP2%';
+                                WHERE FA_reservationid LIKE '%-FB%' OR FA_reservationid LIKE '%-SP%';
                                  """
 
     cursor_target.execute(update_external_taas)

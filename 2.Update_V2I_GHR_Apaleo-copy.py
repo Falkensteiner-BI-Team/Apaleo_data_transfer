@@ -209,11 +209,12 @@ def Insert_external_bookings(import_date):
 log_message("GHR - start inserting api results..")
 #import_date = dt.date.today() - dt.timedelta(days=1)
 import_date = dt.date.today()
-Insert_API_Results(import_date)
+#Insert_API_Results(import_date)
 import_date_str = import_date.strftime('%Y-%m-%d')
 log_message("GHR - Inserted API results..")
 
-
+Insert_external_bookings(import_date)
+log_message("GHR - Inserted external folios results..")
 
 def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolumnapaleo, datumimp, default_value):
     update_query = f"""
@@ -226,7 +227,7 @@ def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolu
     cursor_target.execute(update_query, )
 
 
-
+'''
 Preprocess_and_Update("GHR_leistacc", "Seq_ID", "V2D_res_num_mapping", "GHR_reservationid", "Apaleo_res_ID", import_date_str, "NULL")
 log_message("GHR - GHR_leistacc updated ")
 connection_target.commit()
@@ -279,3 +280,4 @@ Update_roomnr(import_date_str)
 
 log_message("GHR - GHR_zimmer updated")
 connection_target.commit()
+'''

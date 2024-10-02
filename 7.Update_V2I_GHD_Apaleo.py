@@ -110,7 +110,7 @@ FROM (
     FROM 
         V2I_Folios_Apaleo r
     WHERE 
-        r.FA_taacode IS NOT NULL and r.FA_source IN ("folios","folios_booking")
+        r.FA_taacode IS NOT NULL and r.FA_source IN ("folios","folios_booking","folios_external")
     GROUP BY 
         r.FA_reservationid, r.FA_taacode, r.FA_date
 ) revenue
