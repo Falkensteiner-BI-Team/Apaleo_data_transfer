@@ -516,9 +516,7 @@ def Insert_External_Folios():
         pass
 
 
-#Insert_External_Folios()
 
-log_message("Folios - external folios updated")
 
 ##########################################################################pre-processing########################################################################
 

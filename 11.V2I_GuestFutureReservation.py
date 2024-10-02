@@ -44,7 +44,7 @@ for row in cursor_target.fetchall():
 
 
 ##### deleting protel imports
-select_query = """SELECT DISTINCT(GFR_datumimp) FROM V2I_GFR_Apaleo WHERE GFR_datumimp >= DATE_SUB(CURDATE(), INTERVAL 10 DAY) AND  GFR_leistacc IS NOT NULL"""
+select_query = """SELECT DISTINCT(GFR_datumimp) FROM V2I_GFR_Apaleo WHERE GFR_datumimp >= DATE_SUB(CURDATE(), INTERVAL 3 DAY) AND  GFR_leistacc IS NOT NULL"""
 
 cursor_target.execute(select_query, )
 

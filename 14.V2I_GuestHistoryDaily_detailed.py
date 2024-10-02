@@ -25,7 +25,7 @@ values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
 
 
 select_query = """SELECT GHD_leistacc,GHD_mpehotel,GHD_datum,GHD_zimmernr,GHD_roomnights,GHD_resstatus,GHD_typ,GHD_preistypgr,GHD_preistyp,GHD_anzerw,GHD_anzkin1,GHD_anzkin2,GHD_anzkin3,GHD_anzkin4,GHD_zbett,GHD_kbett,GHD_TAA,GHD_n_,GHD_g_,GHD_n_EUR,GHD_g_EUR,GHD_sysimport
- FROM V2I_GHDD_Apaleo WHERE GHD_sysimport >= CONCAT('guesthistorydaily_detailed_apaleo_', DATE_SUB(CURDATE(), INTERVAL 30 DAY),'.7z') AND  GHD_leistacc IS NOT NULL"""
+ FROM V2I_GHDD_Apaleo WHERE GHD_sysimport >= CONCAT('guesthistorydaily_detailed_apaleo_', DATE_SUB(CURDATE(), INTERVAL 3 DAY),'.7z') AND  GHD_leistacc IS NOT NULL"""
 
 delete_query = """DELETE FROM V2I_GuestHistoryDaily_Detailed WHERE GHD_leistacc = %s AND GHD_datum = %s AND GHD_TAA=%s"""
 
