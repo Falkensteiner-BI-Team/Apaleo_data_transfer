@@ -149,7 +149,7 @@ def Insert_external_bookings(import_date):
     qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s"""
 
     get_folios = APIClient(
-            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom='+ str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z',
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-05-01T00:00:00Z',
             get_token()).get_data()
 
     if get_folios:
@@ -227,7 +227,7 @@ def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolu
     cursor_target.execute(update_query, )
 
 
-'''
+
 Preprocess_and_Update("GHR_leistacc", "Seq_ID", "V2D_res_num_mapping", "GHR_reservationid", "Apaleo_res_ID", import_date_str, "NULL")
 log_message("GHR - GHR_leistacc updated ")
 connection_target.commit()
@@ -280,4 +280,3 @@ Update_roomnr(import_date_str)
 
 log_message("GHR - GHR_zimmer updated")
 connection_target.commit()
-'''

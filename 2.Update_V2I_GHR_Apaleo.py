@@ -149,7 +149,7 @@ def Insert_external_bookings(import_date):
     qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s"""
 
     get_folios = APIClient(
-            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom='+ str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z',
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-05-01T00:00:00Z',
             get_token()).get_data()
 
     if get_folios:
@@ -205,13 +205,15 @@ def Insert_external_bookings(import_date):
 
 
 
-
 log_message("GHR - start inserting api results..")
 #import_date = dt.date.today() - dt.timedelta(days=1)
 import_date = dt.date.today()
 Insert_API_Results(import_date)
 import_date_str = import_date.strftime('%Y-%m-%d')
 log_message("GHR - Inserted API results..")
+
+Insert_external_bookings(import_date)
+log_message("GHR- Inserted External bookings")
 
 
 

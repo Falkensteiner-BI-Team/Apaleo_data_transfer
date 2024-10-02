@@ -3344,3 +3344,4 @@
 2024-10-02 17:14:30 - Folios - folios canceled and noshow update started
 2024-10-02 17:14:30 - Folios - folios canceled and noshow update finished
 2024-10-02 17:14:30 - Folios - folios group booking update finished
+2024-10-02 17:35:20 - Folios - external folios updated
