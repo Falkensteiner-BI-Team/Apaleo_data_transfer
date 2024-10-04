@@ -146,7 +146,7 @@ def Insert_external_bookings(import_date):
      `GHR_zimmer`,
      `GHR_market_segment`)Values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
 
-    qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s"""
+    qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_bookingid` = %s"""
 
     get_folios = APIClient(
             'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-05-01T00:00:00Z',
@@ -189,7 +189,7 @@ def Insert_external_bookings(import_date):
                                         "INDIVIDUAL",
 
                                     )
-                                    cursor_target.execute(qry_delete, (params_external[1],))
+                                    cursor_target.execute(qry_delete, (params_external[0],))
                                     cursor_target.execute(qry_insert, params_external)
                                 else:
                                     print(f"Charge ID {charge['id']} was routedTo: {charge['routedTo']}")
