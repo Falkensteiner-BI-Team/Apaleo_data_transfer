@@ -10,15 +10,15 @@ connection_target = mysql.connector.connect(host='DB-FMT06', database='FMT_Repor
 
 cursor_target = connection_target.cursor()
 
-
 def log_message(message, file_path='Apaleo_log.txt'):
     with open(file_path, 'a') as file:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         file.write(f'{timestamp} - {message}\n')
 
 
-log_message("GHR - GHR  update started")
 
+
+log_message("GHR - GHR  update started")
 
 def Insert_API_Results(import_date):
     get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations', get_token()).get_data()
@@ -35,11 +35,12 @@ def Insert_API_Results(import_date):
         'desvu': 8
     }
 
+
     reschar_mapping = {
-        'checkedout': 0,
-        'inhouse': 0,
-        'canceled': 2,
-        'noshow': 3
+        'checkedout' : 0,
+        'inhouse' : 0,
+        'canceled' : 2,
+        'noshow':3
     }
 
     rateplan_typ_mapping = {
@@ -76,26 +77,24 @@ def Insert_API_Results(import_date):
 
                         reschar_mapping.get(reservation.get("status").lower(), None),
 
-                        # reservation.get("unitGroup", {}).get('code'),
+                        #reservation.get("unitGroup", {}).get('code'),
                         reservation.get("unitGroup", {}).get("code")[:-1] if reservation.get("unitGroup",
-                                                                                             {}).get(
+                                                                                                    {}).get(
                             "code") in ("PBL", "PGO", "PDI") else reservation.get("unitGroup", {}).get("code"),
 
                         reservation.get("unit", {}).get('name'),
-                        reservation.get("marketSegment", {}).get("code") if reservation.get("marketSegment", {}).get(
-                            "code") else "INDIVIDUAL",
+                        reservation.get("marketSegment", {}).get("code") if reservation.get("marketSegment", {}).get("code") else "INDIVIDUAL",
                         channel_code_mapping.get(reservation.get("channelCode").lower(), None),
                         reservation.get("primaryGuest", {}).get("birthDate"),
                         reservation.get("company", {}).get("id"),
 
                         reservation.get("primaryGuest").get("nationalityCountryCode", "XX") + "_XXX_XXX",
 
-                        reservation.get("primaryGuest").get("nationalityCountryCode", "XX") + "_" + reservation.get(
-                            "primaryGuest").get("address", {}).get("postalCode", "XXX") + "_" + reservation.get(
-                            "primaryGuest").get("address", {}).get("city", "XXX"),
 
-                        datetime.fromisoformat(reservation.get("cancellationTime")).strftime(
-                            '%Y-%m-%d') if reservation.get("cancellationTime") else "1900-01-01",
+
+                        reservation.get("primaryGuest").get("nationalityCountryCode","XX") + "_" + reservation.get("primaryGuest").get("address", {}).get("postalCode", "XXX") + "_" + reservation.get("primaryGuest").get("address",{}).get("city", "XXX"),
+
+                        datetime.fromisoformat(reservation.get("cancellationTime")).strftime('%Y-%m-%d') if reservation.get("cancellationTime") else "1900-01-01",
 
                         str(reservation.get('property').get('id')) + "-" + reservation.get("bookingId") + "-1",
                         reservation.get("externalCode", None),
@@ -119,17 +118,103 @@ def Insert_API_Results(import_date):
                     connection_target.commit()
                     cursor_target.execute(qry_insert, params)
                     connection_target.commit()
-                    # print(params[0])
+                    #print(params[0])
+
+
+
+
+def Insert_external_bookings(import_date):
+
+
+    qry_insert = """INSERT INTO `V2I_GHR_Apaleo`(
+    `GHR_bookingid`,
+    `GHR_reservationid`,
+    `GHR_code2`,
+    `GHR_datumres`,
+    `GHR_datumvon`,
+    `GHR_datumbis`,
+    `GHR_unit_group_code`,
+     `GHR_datumcxl`,   
+     `GHR_updated`,
+     `GHR_rateplan`,
+     `GHR_typ`,
+     `GHR_reschar`,
+     `GHR_status`,
+     `GHR_datumimp`,
+     `GHR_sysimport`,
+     `GHR_Adults`,
+     `GHR_zimmer`,
+     `GHR_market_segment`)Values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+
+    qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s"""
+
+    get_folios = APIClient(
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-05-01T00:00:00Z',
+            get_token()).get_data()
+
+    if get_folios:
+        try:
+            for folio in get_folios["folios"]:
+                    if "charges" in folio:
+                        for charge in folio["charges"]:
+                            if "movedReason" not in charge:
+
+                                print(f"No movedReason for charge ID {charge['id']}")
+                                if "routedTo" not in charge:
+
+                                    print(f"Not routedTo {charge['id']}")
+                                    property = folio["id"].split('-')[0]
+                                    bookingid = folio["id"]
+                                    reservationid = property +"-"+bookingid
+                                    print(folio)
+
+                                    params_external = (
+                                        bookingid,
+                                        reservationid,
+                                        property[-2:],
+                                        datetime.fromisoformat(folio['created']).strftime('%Y-%m-%d'),
+                                        datetime.fromisoformat(folio['created']).strftime('%Y-%m-%d'),
+                                        datetime.fromisoformat(folio['created']).strftime('%Y-%m-%d'),
+                                        "PM",
+                                        '1900-01-01',
+                                        datetime.fromisoformat(folio['updated']).strftime('%Y-%m-%d'),
+                                        "INTERNAL",
+                                        0,
+                                        0,
+                                        "checkedout",
+                                        str(import_date),
+                                        "guesthistoryreservationapaleo_" + str(import_date),
+                                        1,
+                                        0,
+                                        "INDIVIDUAL",
+
+                                    )
+                                    cursor_target.execute(qry_delete, (params_external[1],))
+                                    cursor_target.execute(qry_insert, params_external)
+                                else:
+                                    print(f"Charge ID {charge['id']} was routedTo: {charge['routedTo']}")
+                            else:
+                                print(f"Charge ID {charge['id']} has movedReason: {charge['movedReason']}")
+            connection_target.commit()
+        except mysql.connector.Error as err:
+                error_message = f"Error: {err}"
+                print(error_message)
+                log_message(error_message)
+                connection_target.rollback()
+
+
+
 
 
 log_message("GHR - start inserting api results..")
-import_date = dt.date.today() - dt.timedelta(days=4)
-print(import_date)
-#import_date = dt.date.today()
+#import_date = dt.date.today() - dt.timedelta(days=1)
+import_date = dt.date.today()
 #Insert_API_Results(import_date)
 import_date_str = import_date.strftime('%Y-%m-%d')
 log_message("GHR - Inserted API results..")
 
+Insert_external_bookings(import_date)
+log_message("GHR - Inserted external folios results..")
 
 def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolumnapaleo, datumimp, default_value):
     update_query = f"""
@@ -137,41 +222,39 @@ def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolu
     LEFT JOIN {mappingtable} AS m ON v.{keycolumn} = m.{keycolumnapaleo}
     SET v.{column} = COALESCE(m.{mappedcolumn}, {default_value})
     WHERE DATE(v.GHR_datumimp) = '{datumimp}'
-
+    
     """
     cursor_target.execute(update_query, )
 
 
-#Preprocess_and_Update("GHR_leistacc", "Seq_ID", "V2D_res_num_mapping", "GHR_reservationid", "Apaleo_res_ID",
-   #                   import_date_str, "NULL")
+
+Preprocess_and_Update("GHR_leistacc", "Seq_ID", "V2D_res_num_mapping", "GHR_reservationid", "Apaleo_res_ID", import_date_str, "NULL")
 log_message("GHR - GHR_leistacc updated ")
 connection_target.commit()
 
-#Preprocess_and_Update("GHR_mpehotel", "PAS_Protel_ID", "V2D_Property_Attributes", "GHR_code2", "PAS_code2",
-   #                   import_date_str, "NULL")
 
+Preprocess_and_Update("GHR_mpehotel", "PAS_Protel_ID", "V2D_Property_Attributes", "GHR_code2", "PAS_code2", import_date_str, "NULL" )
 log_message("GHR - GHR_mpehotel updated ")
 connection_target.commit()
 
-#Preprocess_and_Update("GHR_katnr", "PRC_katnr", "V2D_ProtelRoomCategories", "GHR_unit_group_code", "PRC_kat",
-#                      import_date_str, 0)
-#log_message("GHR - GHR_katnr updated ")
-#connection_target.commit()
 
-cursor_target.execute(f"""UPDATE  V2I_GHR_Apaleo SET GHR_market_segment= 'MICEGR' WHERE GHR_rateplan LIKE '%GR%' AND (GHR_market_segment = 'INDIVIDUAL' OR GHR_market_segment IS NULL) AND DATE(GHR_datumimp)  = '{import_date_str}' """, )
+Preprocess_and_Update("GHR_katnr", "PRC_katnr", "V2D_ProtelRoomCategories", "GHR_unit_group_code", "PRC_kat", import_date_str, 0)
+log_message("GHR - GHR_katnr updated ")
+connection_target.commit()
 
-cursor_target.execute(
-    f"""UPDATE  V2I_GHR_Apaleo SET GHR_market_segment= 'LEISUREGR' WHERE GHR_rateplan LIKE '%CR%' AND (GHR_market_segment = 'INDIVIDUAL' OR GHR_market_segment IS NULL) AND DATE(GHR_datumimp) = '{import_date_str}' """, )
+
+cursor_target.execute(f"""UPDATE  V2I_GHR_Apaleo SET GHR_market_segment= 'MICEGR' WHERE GHR_rateplan LIKE '%GR%' AND (GHR_market_segment = 'INDIVIDUAL' OR GHR_market_segment IS NULL) AND DATE(GHR_datumimp)  = '{import_date_str}' """,)
+cursor_target.execute(f"""UPDATE  V2I_GHR_Apaleo SET GHR_market_segment= 'LEISUREGR' WHERE GHR_rateplan LIKE '%CR%' AND (GHR_market_segment = 'INDIVIDUAL' OR GHR_market_segment IS NULL) AND DATE(GHR_datumimp) = '{import_date_str}' """,)
 log_message("GHR - GHR  market segment updated")
 connection_target.commit()
 
-Preprocess_and_Update("GHR_market", "MK_Nr", "V2D_Apaleo_Market", "GHR_market_segment", "Apaleo_Mkt_code",
-                      import_date_str, "NULL")
+
+Preprocess_and_Update("GHR_market", "MK_Nr", "V2D_Apaleo_Market", "GHR_market_segment", "Apaleo_Mkt_code", import_date_str,"NULL")
 log_message("GHR - GHR_market updated ")
 connection_target.commit()
 
-Preprocess_and_Update("GHR_sharenr", "Seq_ID", "V2D_res_num_mapping", "GHR_bookingid_sharer", "Apaleo_res_ID",
-                      import_date_str, "NULL")
+
+Preprocess_and_Update("GHR_sharenr", "Seq_ID", "V2D_res_num_mapping", "GHR_bookingid_sharer", "Apaleo_res_ID", import_date_str, "NULL")
 log_message("GHR - GHR_sharenr updated ")
 connection_target.commit()
 
@@ -195,5 +278,5 @@ def Update_roomnr(datumimp):
 
 Update_roomnr(import_date_str)
 
-log_message("GHR - GHR_zimmer  updated ")
+log_message("GHR - GHR_zimmer updated")
 connection_target.commit()

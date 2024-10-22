@@ -17,11 +17,11 @@ def log_message(message, file_path='Apaleo_log.txt'):
 
 
 
-
 log_message("GFR - GFR  update started")
 
+
 def Insert_API_Results(importdate):
-    get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations', get_token()).get_data()
+    get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations?dateFilter=Modification&from='+str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z', get_token()).get_data()
 
     channel_code_mapping = {
         'direct': 145,

@@ -21,7 +21,7 @@ def log_message(message, file_path='Apaleo_log.txt'):
 log_message("GHR - GHR  update started")
 
 def Insert_API_Results(import_date):
-    get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations', get_token()).get_data()
+    get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations?dateFilter=Modification&from='+str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z', get_token()).get_data()
 
     channel_code_mapping = {
         'direct': 145,
@@ -146,10 +146,10 @@ def Insert_external_bookings(import_date):
      `GHR_zimmer`,
      `GHR_market_segment`)Values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
 
-    qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s"""
+    qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_bookingid` = %s"""
 
     get_folios = APIClient(
-            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=2024-05-01T00:00:00Z',
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=' + str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z',
             get_token()).get_data()
 
     if get_folios:
@@ -159,14 +159,13 @@ def Insert_external_bookings(import_date):
                         for charge in folio["charges"]:
                             if "movedReason" not in charge:
 
-                                print(f"No movedReason for charge ID {charge['id']}")
                                 if "routedTo" not in charge:
 
-                                    print(f"Not routedTo {charge['id']}")
+                                    #print(f"Not routedTo {charge['id']}")
                                     property = folio["id"].split('-')[0]
                                     bookingid = folio["id"]
                                     reservationid = property +"-"+bookingid
-                                    print(folio)
+                                   # print(folio)
 
                                     params_external = (
                                         bookingid,
@@ -189,7 +188,7 @@ def Insert_external_bookings(import_date):
                                         "INDIVIDUAL",
 
                                     )
-                                    cursor_target.execute(qry_delete, (params_external[1],))
+                                    cursor_target.execute(qry_delete, (params_external[0],))
                                     cursor_target.execute(qry_insert, params_external)
                                 else:
                                     print(f"Charge ID {charge['id']} was routedTo: {charge['routedTo']}")
@@ -205,16 +204,17 @@ def Insert_external_bookings(import_date):
 
 
 
-
 log_message("GHR - start inserting api results..")
 #import_date = dt.date.today() - dt.timedelta(days=1)
 import_date = dt.date.today()
-#Insert_API_Results(import_date)
+Insert_API_Results(import_date)
 import_date_str = import_date.strftime('%Y-%m-%d')
 log_message("GHR - Inserted API results..")
 
 Insert_external_bookings(import_date)
-log_message("GHR - Inserted external folios results..")
+log_message("GHR- Inserted External bookings")
+
+
 
 def Preprocess_and_Update(column, mappedcolumn, mappingtable, keycolumn, keycolumnapaleo, datumimp, default_value):
     update_query = f"""

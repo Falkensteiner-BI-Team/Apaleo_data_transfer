@@ -8,8 +8,6 @@ from datetime import datetime, date, timedelta
 
 # FMT_Reporting MySQL Server
 
-
-
 def get_recent_reservationid_cloud(maxid):
   connection_target_azure = MySQLdb.connect(
       host=userdata.azure_host(),

@@ -53,6 +53,13 @@ class APIClient:
         response = requests.post(self.base_url, headers=self.headers, params = params)
         return response.json()
 
+    def post_data_(self):
+
+
+
+        response = requests.post(self.base_url, headers=self.headers)
+        return response.json()
+
     def extract_to_json(self,data,filepath):
         with open(filepath, 'a', encoding='utf-8') as File:
             json.dump(data, File, ensure_ascii=False)
