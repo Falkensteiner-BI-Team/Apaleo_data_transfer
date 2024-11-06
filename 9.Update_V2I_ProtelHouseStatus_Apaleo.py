@@ -18,7 +18,7 @@ cursor_target = connection_target.cursor()
 
 
 def update_Inventory_Apaleo(import_date):
-    properties = ["FCZ", "FSA", "FKP", "FST", "FHS","FBL", "FSG","FSV","FCA"]
+    properties = ["FCZ", "FSA", "FKP", "FST", "FHS","FBL", "FSG","FSV","FCA","FCR","FED","FFK","FMO"]
 
     for property in properties:
         get_oos = APIClient(
@@ -58,12 +58,12 @@ SELECT
    SUM(CASE WHEN GHR_reschar NOT IN (3,2) THEN GHD_roomnights ELSE 0 END) AS rooms_occupied,
     COUNT(CASE WHEN GHD_resstatus = 1 AND GHR_reschar NOT IN (3,2) THEN 1 END) AS arrivals,
     COUNT(CASE WHEN GHD_resstatus = 3 AND GHR_reschar NOT IN (3,2) THEN 1 END) AS departures,
-    SUM(CASE WHEN GHD_resstatus = 2 AND GHR_reschar NOT IN (3,2) THEN GHD_anzerw ELSE 0 END) AS persons_inhouse,
-    SUM(CASE WHEN GHD_resstatus = 2 AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin1 ELSE 0 END) AS child1_inhouse,
-    SUM(CASE WHEN GHD_resstatus = 2 AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin2 ELSE 0 END) AS child2_inhouse,
-    SUM(CASE WHEN GHD_resstatus = 2 AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin3 ELSE 0 END) AS child3_inhouse,
-    SUM(CASE WHEN GHD_resstatus = 2 AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin4 ELSE 0 END) AS child4_inhouse,
-    SUM(CASE WHEN GHD_resstatus = 2 AND GHR_reschar NOT IN (3,2) THEN GHD_kbett ELSE 0 END) AS cot_inhouse,
+    SUM(CASE WHEN GHD_resstatus IN (1,2) AND GHR_reschar NOT IN (3,2) AND GHR_unit_group_type="bedroom" THEN GHD_anzerw ELSE 0 END) AS persons_inhouse,
+    SUM(CASE WHEN GHD_resstatus IN (1,2) AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin1 ELSE 0 END) AS child1_inhouse,
+    SUM(CASE WHEN GHD_resstatus IN (1,2) AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin2 ELSE 0 END) AS child2_inhouse,
+    SUM(CASE WHEN GHD_resstatus IN (1,2) AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin3 ELSE 0 END) AS child3_inhouse,
+    SUM(CASE WHEN GHD_resstatus IN (1,2) AND GHR_reschar NOT IN (3,2) THEN GHD_anzkin4 ELSE 0 END) AS child4_inhouse,
+    SUM(CASE WHEN GHD_resstatus IN (1,2) AND GHR_reschar NOT IN (3,2) THEN GHD_kbett ELSE 0 END) AS cot_inhouse,
     SUM(CASE WHEN GHR_kattyp = 4 AND GHR_reschar NOT IN (3,2) THEN GHD_roomnights ELSE 0 END) AS PHS_rooms_houseuse,
     SUM(CASE WHEN GHR_kattyp = 4 AND GHR_reschar NOT IN (3,2) THEN GHD_anzerw ELSE 0 END) AS PHS_persons_houseuse,
     SUM(CASE WHEN GHR_kattyp = 1 AND GHR_reschar NOT IN (3,2) THEN GHD_roomnights ELSE 0 END) AS PHS_rooms_complimentary,
@@ -79,7 +79,7 @@ LEFT JOIN
     ON GHD_reservationid = GHR_reservationid 
 WHERE 
     GHD_datumcxl = '1900-01-01' 
-    AND GHD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 3 DAY)
+    AND GHD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 60 DAY)
 
 GROUP BY 
     GHD_mpehotel, GHD_datum

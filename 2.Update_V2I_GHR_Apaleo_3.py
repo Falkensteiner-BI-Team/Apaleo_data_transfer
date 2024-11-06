@@ -21,7 +21,7 @@ def log_message(message, file_path='Apaleo_log.txt'):
 log_message("GHR - GHR  update started")
 
 def Insert_API_Results(import_date):
-    get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations?dateFilter=Modification&from='+str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z', get_token()).get_data()
+    get_reservations = APIClient('https://api.apaleo.com/booking/v1/reservations?dateFilter=Arrival&from=2024-09-01T00:00:00Z&to2024-10-01T00:00:00Z', get_token()).get_data()
 
     channel_code_mapping = {
         'direct': 145,
@@ -79,19 +79,14 @@ def Insert_API_Results(import_date):
 
                         #reservation.get("unitGroup", {}).get('code'),
                         reservation.get("unitGroup", {}).get("code")[:-1] if reservation.get("unitGroup",
-                                                                                                    {}).get(
+                                                                                                   {}).get(
                             "code") in ("PBL", "PGO", "PDI") else reservation.get("unitGroup", {}).get("code"),
-
                         reservation.get("unit", {}).get('name'),
                         reservation.get("marketSegment", {}).get("code") if reservation.get("marketSegment", {}).get("code") else "INDIVIDUAL",
                         channel_code_mapping.get(reservation.get("channelCode").lower(), None),
                         reservation.get("primaryGuest", {}).get("birthDate"),
                         reservation.get("company", {}).get("id"),
-
                         reservation.get("primaryGuest").get("nationalityCountryCode", "XX") + "_XXX_XXX",
-
-
-
                         reservation.get("primaryGuest").get("nationalityCountryCode","XX") + "_" + reservation.get("primaryGuest").get("address", {}).get("postalCode", "XXX") + "_" + reservation.get("primaryGuest").get("address",{}).get("city", "XXX"),
 
                         datetime.fromisoformat(reservation.get("cancellationTime")).strftime('%Y-%m-%d') if reservation.get("cancellationTime") else "1900-01-01",
@@ -104,12 +99,12 @@ def Insert_API_Results(import_date):
                         datetime.fromisoformat(reservation.get("modified")).strftime('%Y-%m-%d'),
                         reservation.get("ratePlan").get("code"),
                         rateplan_typ_mapping.get(reservation.get("ratePlan").get("code"), 0),
-
+                        reservation.get("unitGroup", {}).get('type').lower()
                     )
 
                     qry_insert = """
-                            INSERT INTO `V2I_GHR_Apaleo`(`GHR_bookingid`,`GHR_reservationid`,`GHR_code2`,`GHR_datumimp`,`GHR_datumres`,`GHR_datumvon`,`GHR_datumbis`,`GHR_status`, `GHR_reschar`, `GHR_unit_group_code`, `GHR_unitname`,`GHR_market_segment`,`GHR_channelCode`,`GHR_kunden_DOB`,`GHR_company`,`GHR_nat_zipcodekey`,`GHR_res_zipcodekey`,`GHR_datumcxl`, `GHR_bookingid_sharer`,`GHR_crsnr`, `GHR_sysimport`,`GHR_ChildAges`,`GHR_Adults`,`GHR_updated`, `GHR_rateplan`,`GHR_typ`) 
-                            Values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                            INSERT INTO `V2I_GHR_Apaleo`(`GHR_bookingid`,`GHR_reservationid`,`GHR_code2`,`GHR_datumimp`,`GHR_datumres`,`GHR_datumvon`,`GHR_datumbis`,`GHR_status`, `GHR_reschar`, `GHR_unit_group_code`, `GHR_unitname`,`GHR_market_segment`,`GHR_channelCode`,`GHR_kunden_DOB`,`GHR_company`,`GHR_nat_zipcodekey`,`GHR_res_zipcodekey`,`GHR_datumcxl`, `GHR_bookingid_sharer`,`GHR_crsnr`, `GHR_sysimport`,`GHR_ChildAges`,`GHR_Adults`,`GHR_updated`, `GHR_rateplan`,`GHR_typ`,`GHR_unit_group_type`) 
+                            Values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                             """
 
                     qry_delete = """ DELETE from `V2I_GHR_Apaleo` where `GHR_reservationid` = %s """
@@ -149,7 +144,7 @@ def Insert_external_bookings(import_date):
     qry_delete = f""" DELETE from `V2I_GHR_Apaleo` where `GHR_bookingid` = %s"""
 
     get_folios = APIClient(
-            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom=' + str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z',
+            'https://api.apaleo.com/finance/v1/folios?type=external&expand=charges&updatedFrom='+str(dt.date.today() - dt.timedelta(days=3)) +'T00:00:00Z',
             get_token()).get_data()
 
     if get_folios:
@@ -159,6 +154,7 @@ def Insert_external_bookings(import_date):
                         for charge in folio["charges"]:
                             if "movedReason" not in charge:
 
+                                #print(f"No movedReason for charge ID {charge['id']}")
                                 if "routedTo" not in charge:
 
                                     #print(f"Not routedTo {charge['id']}")
@@ -200,8 +196,6 @@ def Insert_external_bookings(import_date):
                 print(error_message)
                 log_message(error_message)
                 connection_target.rollback()
-
-
 
 
 log_message("GHR - start inserting api results..")
