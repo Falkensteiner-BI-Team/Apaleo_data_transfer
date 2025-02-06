@@ -16,14 +16,11 @@ def log_message(message, file_path='Apaleo_log.txt'):
         file.write(f'{timestamp} - {message}\n')
 
 
-today = str(dt.date.today())
 
-log_message("Folios - folios confirmed update started")
-
-print(dt.date.today() - dt.timedelta(days=3))
 
 
 def Insert_Confirmed_Res():
+    log_message("Folios - folios confirmed update started")
     confirmed_services = APIClient(
         'https://api.apaleo.com/booking/v1/reservations/?dateFilter=Modification&from=' + str(
             dt.date.today() - dt.timedelta(days=3)) + 'T00:00:00Z&status=Confirmed&expand=timeSlices,services',
@@ -69,6 +66,7 @@ def Insert_Confirmed_Res():
                                 "timeslices_services", today,additional_service_taa))
 
             connection_target.commit()
+            log_message("Folios - folios confirmed update finished")
 
         except mysql.connector.Error as err:
             error_message = f"Error: {err}"
@@ -76,18 +74,12 @@ def Insert_Confirmed_Res():
             log_message(error_message)
 
             connection_target.rollback()
-            pass
 
-
-Insert_Confirmed_Res()
-
-log_message("Folios - folios confirmed update finished")
-
-log_message("Folios - folios inhouse update started")
 
 
 
 def Insert_Inhouse_Res():
+    log_message("Folios - folios inhouse update started")
     get_reservations = APIClient(
         'https://api.apaleo.com/booking/v1/reservations?dateFilter=Modification&from=' + str(dt.date.today() - dt.timedelta(days=3)) + 'T00:00:00Z&status=Inhouse',
         get_token()).get_data()
@@ -145,6 +137,7 @@ def Insert_Inhouse_Res():
                                 print(f"Charge ID {charge['id']} has movedReason: {charge['movedReason']}")
 
                 connection_target.commit()
+                log_message("Folios - folios inhouse update finished")
 
             except mysql.connector.Error as err:
                 error_message = f"Error: {err}"
@@ -155,21 +148,17 @@ def Insert_Inhouse_Res():
     except TypeError as err:
         error_message = f"Error: {err}"
         log_message(error_message)
-        pass
-
-
-Insert_Inhouse_Res()
-log_message("Folios - folios inhouse update finished")
 
 
 
 
 
 
-log_message("Folios - folios groups checkedout update started")
+
 
 
 def Insert_CheckedOut_Group_Booking():
+    log_message("Folios - folios groups checkedout update started")
 
     qry_insert = """INSERT INTO V2I_Folios_Apaleo(FA_date, FA_reservationid, FA_serviceid, FA_servicename, FA_taacode, FA_n_amount, FA_g_amount, FA_status, FA_source, FA_impdate, FA_taacode0)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
 
@@ -224,6 +213,7 @@ def Insert_CheckedOut_Group_Booking():
                                 print(f"Charge ID {charge['id']} has movedReason: {charge['movedReason']}")
 
                 connection_target.commit()
+                log_message("Folios - folios groups checkedout update finished")
 
             except mysql.connector.Error as err:
                 error_message = f"Error: {err}"
@@ -234,19 +224,20 @@ def Insert_CheckedOut_Group_Booking():
     except TypeError as err:
         error_message = f"Error: {err}"
         log_message(error_message)
-        pass
-
-
-Insert_CheckedOut_Group_Booking()
-
-log_message("Folios - folios groups checkedout update finished")
 
 
 
 
-log_message("Folios - folios checkedout update started")
+
+
+
+
+
+
+
 
 def Insert_CheckedOut_Res():
+    log_message("Folios - folios checkedout update started")
     get_reservations = APIClient(
         'https://api.apaleo.com/booking/v1/reservations?dateFilter=Modification&from='+ str(dt.date.today() - dt.timedelta(days=3)) + 'T00:00:00Z&status=CheckedOut',
         get_token()).get_data()
@@ -299,6 +290,7 @@ def Insert_CheckedOut_Res():
                                 print(f"Charge ID {charge['id']} has movedReason: {charge['movedReason']}")
 
                 connection_target.commit()
+                log_message("Folios - folios checkedout update finished")
 
             except mysql.connector.Error as err:
                 error_message = f"Error: {err}"
@@ -309,17 +301,18 @@ def Insert_CheckedOut_Res():
     except TypeError as err:
         error_message = f"Error: {err}"
         log_message(error_message)
-        pass
-
-
-Insert_CheckedOut_Res()
-log_message("Folios - folios checkedout update finished")
 
 
 
-log_message("Folios - folios canceled and noshow update started")
+
+
+
+
+
+
 
 def Insert_Canceled_NoShow_Res():
+    log_message("Folios - folios canceled and noshow update started")
     confirmed_services = APIClient(
         'https://api.apaleo.com/booking/v1/reservations/?dateFilter=Modification&from=' + str(dt.date.today() - dt.timedelta(days=3)) + 'T00:00:00Z&status=Canceled,NoShow&expand=timeSlices,services',get_token()).get_data()
 
@@ -365,6 +358,7 @@ def Insert_Canceled_NoShow_Res():
                                     "timeslices_services", today, additional_service_taa))
 
                 connection_target.commit()
+                log_message("Folios - folios canceled and noshow update finished")
 
             except mysql.connector.Error as err:
                 error_message = f"Error: {err}"
@@ -377,19 +371,23 @@ def Insert_Canceled_NoShow_Res():
     except TypeError as err:
         error_message = f"Error: {err}"
         log_message(error_message)
-        pass
 
 
-Insert_Canceled_NoShow_Res()
 
 
-log_message("Folios - folios canceled and noshow update finished")
+
+
+
 
 
 
 def Insert_Confirmed_Group_Booking_Folios():
     qry_insert = """insert into V2I_Folios_Apaleo(FA_date, FA_reservationid, FA_n_amount, FA_g_amount, FA_status, FA_source, FA_impdate, FA_roomnights,FA_taacode) VALUES(%s,%s, %s, %s, %s, %s, %s, %s, %s)"""
+
+
     qry_delete = """delete from V2I_Folios_Apaleo where FA_reservationid = %s"""
+
+
     bookings = APIClient(
         'https://api.apaleo.com/booking/v1/blocks?expand=timeSlices&from=' +str(dt.date.today() - dt.timedelta(days=3)) + 'T00:00:00Z',
         get_token()).get_data()
@@ -440,12 +438,12 @@ def Insert_Confirmed_Group_Booking_Folios():
 
 
     connection_target.commit()
-
-Insert_Confirmed_Group_Booking_Folios()
-
+    log_message("Folios - folios confirmed group booking update finished")
 
 
-log_message("Folios - folios group booking update finished")
+
+
+
 
 def Insert_External_Folios():
 
@@ -503,6 +501,7 @@ def Insert_External_Folios():
                                 print(f"Charge ID {charge['id']} has movedReason: {charge['movedReason']}")
 
                 connection_target.commit()
+                log_message("Folios - external folios updated")
 
             except mysql.connector.Error as err:
                 error_message = f"Error: {err}"
@@ -513,12 +512,12 @@ def Insert_External_Folios():
     except TypeError as err:
         error_message = f"Error: {err}"
         log_message(error_message)
-        pass
 
 
-Insert_External_Folios()
 
-log_message("Folios - external folios updated")
+
+
+
 
 ##########################################################################pre-processing########################################################################
 
@@ -602,10 +601,11 @@ def servicename_cleaning():
 
 
     connection_target.commit()
+    log_message("Folios - servicename cleaning done")
 
-servicename_cleaning()
 
-log_message("Folios - servicename cleaning done")
+
+
 
 
 def update_TAA():
@@ -635,7 +635,7 @@ WHERE V2I_Folios_Apaleo.FA_taacode = '0';
                 WHERE FA_taacode = %s;
                 """
 
-            # Use a tuple to safely pass parameters to execute method
+
             param = (f"{find_string}",)
             print(param)
 
@@ -651,8 +651,34 @@ WHERE V2I_Folios_Apaleo.FA_taacode = '0';
 
     cursor_target.execute(update_external_taas)
     connection_target.commit()
+    log_message("Folios - taas mapped")
 
 
-update_TAA()
 
-log_message("Folios - taas mapped")
+
+if __name__ == "__main__":
+    today = str(dt.date.today())
+
+    print(dt.date.today() - dt.timedelta(days=3))
+
+    Insert_Confirmed_Res()
+
+    Insert_Inhouse_Res()
+
+    Insert_CheckedOut_Group_Booking()
+
+    Insert_CheckedOut_Res()
+
+    Insert_Canceled_NoShow_Res()
+
+    Insert_Confirmed_Group_Booking_Folios()
+
+    Insert_External_Folios()
+
+    servicename_cleaning()
+
+    update_TAA()
+
+
+
+

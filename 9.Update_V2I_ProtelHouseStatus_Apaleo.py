@@ -18,7 +18,7 @@ cursor_target = connection_target.cursor()
 
 
 def update_Inventory_Apaleo(import_date):
-    properties = ["FCZ", "FSA", "FKP", "FST", "FHS","FBL", "FSG","FSV","FCA","FCR","FED","FFK","FMO"]
+    properties = ["FCZ", "FSA", "FKP", "FST", "FHS","FBL", "FSG","FSV","FCA","FCR","FED","FFK","FMO","FPP","FAD"]
 
     for property in properties:
         get_oos = APIClient(
@@ -79,7 +79,7 @@ LEFT JOIN
     ON GHD_reservationid = GHR_reservationid 
 WHERE 
     GHD_datumcxl = '1900-01-01' 
-    AND GHD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 60 DAY)
+    AND GHD_datumimp >= DATE_SUB(CURDATE(), INTERVAL 3 DAY)
 
 GROUP BY 
     GHD_mpehotel, GHD_datum

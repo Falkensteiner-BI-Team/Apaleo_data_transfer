@@ -6,6 +6,7 @@ import datetime as dt
 # FMT_Reporting MySQL Server
 connection_target = mysql.connector.connect(host='DB-FMT06', database='FMT_Reporting', user=userdata.mysql_user(),
                                             password=userdata.mysql_password())
+
 cursor_target = connection_target.cursor()
 
 
@@ -16,24 +17,16 @@ def log_message(message, file_path='Apaleo_log.txt'):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         file.write(f'{timestamp} - {message}\n')
 
-
-log_message("GHD - GHD started...")
-
-
 '''
-
 CREATE TABLE IF NOT EXISTS Numbers (
     number INT PRIMARY KEY
 );
-
 INSERT INTO Numbers (number)
 SELECT (a.n + b.n * 10 + c.n * 1000000) AS number
 FROM
     (SELECT 0 AS n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) a,
     (SELECT 0 AS n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) b,
     (SELECT 0 AS n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) c;
-
-
 '''
 
 select_query = """
@@ -69,6 +62,7 @@ WITH DetailedGHR AS (
         Numbers ON Numbers.number <= DATEDIFF(main.GHR_datumbis, main.GHR_datumvon)
     WHERE 
          main.GHR_datumimp > DATE_SUB(CURDATE(), INTERVAL 3 DAY)
+
 ),
 
 AggregatedChildGroups AS (
@@ -98,7 +92,8 @@ SELECT
     CAST(SUM(CASE WHEN t.TAA_GroupOrd1 = 'Logis' THEN revenue.total_n_amount ELSE 0 END) AS DECIMAL(18,8)) AS logis,
     CAST(SUM(CASE WHEN t.TAA_GroupOrd1 = 'F&B' THEN revenue.total_n_amount ELSE 0 END) AS DECIMAL(18,8)) AS fb,
     CAST(SUM(CASE WHEN t.TAA_GroupOrd1 = 'Spa' THEN revenue.total_n_amount ELSE 0 END) AS DECIMAL(18,8)) AS spa,
-    CAST(SUM(CASE WHEN t.TAA_GroupOrd1 NOT IN ('Logis', 'F&B', 'Spa') OR t.TAA_GroupOrd1 IS NULL THEN revenue.total_n_amount ELSE 0 END) AS DECIMAL(18,8)) AS Other
+    CAST(SUM(CASE WHEN t.TAA_GroupOrd1 = 'Ski' THEN revenue.total_n_amount ELSE 0 END) AS DECIMAL(18,8)) AS ski,
+    CAST(SUM(CASE WHEN t.TAA_GroupOrd1 NOT IN ('Logis', 'F&B', 'Spa','Ski') OR t.TAA_GroupOrd1 IS NULL THEN revenue.total_n_amount ELSE 0 END) AS DECIMAL(18,8)) AS Other
 
 FROM (
     SELECT
@@ -143,6 +138,7 @@ SELECT
     COALESCE(f.logis, 0) AS logis,
     COALESCE(f.fb, 0) AS fb,
     COALESCE(f.spa, 0) AS spa,
+    COALESCE(f.ski, 0) AS ski,
     COALESCE(f.other, 0) AS other, 
     CONCAT('guesthistorydailyapaleo_', GHR_datumimp)
 FROM
@@ -153,12 +149,21 @@ LEFT JOIN
 	Folios f ON d.GHR_bookingid = f.id and d.GHD_datum = f.FA_date
 """
 
-Insert_qry = """insert into V2I_GHD_Apaleo(GHD_reservationid, GHD_leistacc,GHD_mpehotel,GHD_datumimp, GHD_datum,GHD_zimmernr,GHD_roomnights,GHD_resstatus,GHD_typ,GHD_anzerw,GHD_datumcxl, GHD_anzkin1, GHD_anzkin2,GHD_anzkin3,GHD_anzkin4,GHD_kbett,GHD_n_logis, GHD_n_fb, GHD_n_spa, GHD_n_other, GHD_sysimport)VALUES(%s,%s,%s,%s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s, %s, %s)"""
 
-cursor_target.execute(select_query, )
-results = cursor_target.fetchall()
+
+Insert_qry = """insert into V2I_GHD_Apaleo(GHD_reservationid, GHD_leistacc,GHD_mpehotel,GHD_datumimp, GHD_datum,GHD_zimmernr,GHD_roomnights,GHD_resstatus,GHD_typ,GHD_anzerw,GHD_datumcxl, GHD_anzkin1, GHD_anzkin2,GHD_anzkin3,GHD_anzkin4,GHD_kbett,GHD_n_logis, GHD_n_fb, GHD_n_spa, GHD_n_ski,GHD_n_other, GHD_sysimport)VALUES(%s,%s,%s,%s,%s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s, %s, %s, %s)"""
 
 delete_qry = """delete from V2I_GHD_Apaleo where GHD_reservationid=%s and GHD_datum =%s"""
+
+log_message("GHD - GHD started...")
+
+cursor_target.execute(select_query, )
+
+log_message("GHD - GHD select query done...")
+results = cursor_target.fetchall()
+
+
+log_message("GHD - GHD inserting...")
 
 for result in results:
     cursor_target.execute(delete_qry, (result[0], result[4],))

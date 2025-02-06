@@ -52,8 +52,8 @@ SET
 
 WHERE ghd.GHD_sysimport LIKE 'guesthistorydailyapaleo_%'; """
 
-cursor_target.execute(update_GuestHistoryDaily_Detailed, )
-connection_target.commit()
+#cursor_target.execute(update_GuestHistoryDaily_Detailed, )
+#connection_target.commit()
 
 cursor_target.execute(update_GuestHistoryDaily, )
 connection_target.commit()

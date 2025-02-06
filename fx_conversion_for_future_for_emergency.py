@@ -17,7 +17,7 @@ SET
 	gfd.GFD_n_fb_EUR = gfd.GFD_n_fb / fx.FX_avg,
 	gfd.GFD_n_other_EUR = gfd.GFD_n_other / fx.FX_avg
 
-WHERE gfd.GFD_n_logis_EUR IS NULL AND gfd.GFD_sysimport >= "guestfuturedailyapaleo_2024-09-10";
+WHERE gfd.GFD_n_logis_EUR IS NULL AND gfd.GFD_sysimport >= "guestfuturedailyapaleo_2025-01-01";
 
 
 
@@ -41,6 +41,6 @@ SET
 	gfd.GFD_n_fb_EUR = gfd.GFD_n_fb / lfx.FX_avg,
 	gfd.GFD_n_other_EUR = gfd.GFD_n_other / lfx.FX_avg
 
-WHERE gfd.GFD_n_logis_EUR IS NULL AND  gfd.GFD_sysimport >= "guestfuturedailyapaleo_2024-09-10";
+WHERE gfd.GFD_n_logis_EUR IS NULL AND  gfd.GFD_sysimport >= "guestfuturedailyapaleo_2025-01-01";
 
 '''

@@ -59,7 +59,7 @@ def Insert_API_Results(import_date):
         arrival = datetime.fromisoformat(reservation.get("arrival")).strftime('%Y-%m-%d')
         today = date.today().strftime('%Y-%m-%d')
 
-        if reservation['property']['id'] not in ["BER", "LND", "MUC", "PAR", "VIE"]:
+        if reservation['property']['id'] not in ["BER", "LND", "MUC", "PAR", "VIE", "FKP"]:
             if arrival > date(2024, 5, 1).strftime('%Y-%m-%d'):
 
                 if arrival < today:

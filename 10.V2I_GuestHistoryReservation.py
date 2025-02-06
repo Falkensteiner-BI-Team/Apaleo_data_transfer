@@ -25,7 +25,7 @@ VALUES(%s,%s,%s,%s, %s, %s, %s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s,%s, %s,%s,
 """
 
 
-select_query = """SELECT * FROM V2V_GHR_Apaleo WHERE GHR_sysimport >= CONCAT('guesthistoryreservationapaleo_', DATE_SUB(CURDATE(), INTERVAL 3 DAY)) AND  GHR_leistacc IS NOT NULL"""
+select_query = """SELECT * FROM V2V_GHR_Apaleo WHERE GHR_sysimport >= CONCAT('guesthistoryreservationapaleo_', DATE_SUB(CURDATE(), INTERVAL 3 DAY)) AND  GHR_leistacc IS NOT NULL AND GHR_mpehotel NOT IN (49,19)"""
 
 delete_query = """DELETE FROM V2I_GuestHistoryReservation WHERE GHR_leistacc =%s"""
 cursor_target.execute(select_query, )
